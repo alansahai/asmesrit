@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - ASME SRIT Student Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    height: {
+                        'screen-90': '90vh',
+                        'screen-80': '80vh',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 94, 184, 0.85), rgba(0, 94, 184, 0.9)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .achievement-card {
+            transition: all 0.4s ease;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-img {
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-card:hover .achievement-img {
+            transform: scale(1.08);
+        }
+
+        .timeline-container {
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #005EB8, #0080ff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: calc(50% + 2rem);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 2rem);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #005EB8;
+            border: 4px solid white;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(0, 94, 184, 0.2);
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            top: -0.5rem;
+            transform: translateX(-50%);
+            background: white;
+            border: 2px solid #005EB8;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #005EB8;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #005EB8;
+        }
+
+        .award-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #b45309;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+
+        .category-filter.active {
+            background: #005EB8;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .achievement-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 94, 184, 0.9);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 2rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 4rem;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 2rem;
+            }
+
+            .timeline-date {
+                left: 2rem;
+            }
+        }
+
+        .load-more-btn {
+            background: linear-gradient(45deg, #005EB8, #0080ff);
+            transition: all 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 94, 184, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/assets/asme-srit.png" alt="ASME Logo" class="h-12">
+                <span class="ml-2 text-xl font-bold text-blue-800">ASME SRIT Student Section</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-blue-800 font-medium transition">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-800 font-medium transition">About</a>
+                <a href="index.html#events" class="text-gray-700 hover:text-blue-800 font-medium transition">Events</a>
+                <a href="index.html#gallery"
+                    class="text-gray-700 hover:text-blue-800 font-medium transition">Gallery</a>
+                <a href="#" class="text-blue-800 font-medium border-b-2 border-blue-800">Achievements</a>
+                <a href="index.html#membership"
+                    class="text-gray-700 hover:text-blue-800 font-medium transition">Membership</a>
+                <a href="index.html#contact"
+                    class="text-gray-700 hover:text-blue-800 font-medium transition">Contact</a>
+            </div>
+
+            <button class="md:hidden text-blue-800" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">About</a>
+                <a href="index.html#events" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Events</a>
+                <a href="index.html#gallery"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Gallery</a>
+                <a href="#" class="block px-3 py-2 text-blue-800 bg-blue-50 rounded-md font-medium">Achievements</a>
+                <a href="index.html#membership"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Membership</a>
+                <a href="index.html#contact"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Achievements</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed">
+                Celebrating excellence, innovation, and leadership in mechanical engineering at ASME SRIT Student
+                Section
+            </p>
+
+            <!-- Achievement Stats -->
+            <div class="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                    <div class="stats-counter text-white">25+</div>
+                    <p class="text-lg font-medium">Awards Won</p>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                    <div class="stats-counter text-white">100+</div>
+                    <p class="text-lg font-medium">Projects Completed</p>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                    <div class="stats-counter text-white">500+</div>
+                    <p class="text-lg font-medium">Students Impacted</p>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                    <div class="stats-counter text-white">5</div>
+                    <p class="text-lg font-medium">Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="category-filter active px-6 py-3 rounded-full border-2 border-blue-800 font-medium"
+                    data-category="all">
+                    All Achievements
+                </button>
+                <button class="category-filter px-6 py-3 rounded-full border-2 border-blue-800 font-medium"
+                    data-category="competition">
+                    Competitions
+                </button>
+                <button class="category-filter px-6 py-3 rounded-full border-2 border-blue-800 font-medium"
+                    data-category="recognition">
+                    Recognition
+                </button>
+                <button class="category-filter px-6 py-3 rounded-full border-2 border-blue-800 font-medium"
+                    data-category="innovation">
+                    Innovation
+                </button>
+                <button class="category-filter px-6 py-3 rounded-full border-2 border-blue-800 font-medium"
+                    data-category="community">
+                    Community Impact
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Achievements Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Featured Achievement -->
+            <div class="mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-16">Featured Achievement</h2>
+                <div class="max-w-6xl mx-auto">
+                    <div class="achievement-card bg-white overflow-hidden" data-category="recognition">
+                        <div class="grid md:grid-cols-2">
+                            <div class="relative h-80 md:h-auto overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                                    alt="Best Student Section Award" class="achievement-img w-full h-full object-cover">
+                                <div class="achievement-category">Excellence Award</div>
+                                <div class="award-badge">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                            </div>
+                            <div class="p-8 md:p-12">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-trophy text-blue-800 text-2xl"></i>
+                                    </div>
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">2024</span>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">
+                                    ASME India Outstanding Student Section Award
+                                </h3>
+                                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                    ASME SRIT Student Section was honored with the prestigious Outstanding Student
+                                    Section Award for 2024,
+                                    recognizing our exceptional programming, innovative events, outstanding member
+                                    engagement, and significant
+                                    contributions to advancing mechanical engineering education and professional
+                                    development.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                        <div class="text-2xl font-bold text-blue-800">150+</div>
+                                        <p class="text-sm text-gray-600">Active Members</p>
+                                    </div>
+                                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                        <div class="text-2xl font-bold text-blue-800">20+</div>
+                                        <p class="text-sm text-gray-600">Events Organized</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-blue-800">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span class="font-medium">Awarded: December 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline of Achievements -->
+            <div class="mb-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-12 text-center">Achievement Timeline</h3>
+
+                <div class="timeline-container max-w-6xl mx-auto">
+                    <div class="timeline-line"></div>
+
+                    <!-- Achievement 1 -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">Nov 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                                        alt="E-Fest Competition" class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Competition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-medal text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">ASME E-Fest Regional Champions</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Our team secured first place in the Human Powered Vehicle Challenge at ASME E-Fest
+                                    Regionals,
+                                    demonstrating exceptional engineering design and innovation against 25 competing
+                                    teams.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">1st
+                                        Place</span>
+                                    <span class="text-blue-800 font-medium">Chennai Region</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">Sep 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                                        alt="Innovation Award" class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Innovation</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-lightbulb text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Smart Manufacturing Innovation Award</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Recognized for developing an IoT-based predictive maintenance system for
+                                    manufacturing equipment,
+                                    reducing downtime by 40% and maintenance costs by 30% in local industries.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">Innovation</span>
+                                    <span class="text-blue-800 font-medium">Tamil Nadu State</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="timeline-item" data-category="community">
+                        <div class="timeline-date">Aug 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                                        alt="Community Impact" class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Community Impact</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-heart text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">STEM Excellence in Community Outreach</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Awarded for conducting comprehensive STEM education programs that reached over 1,000
+                                    students
+                                    from 15 local schools, inspiring the next generation to pursue engineering careers.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-bold">Community
+                                        Service</span>
+                                    <span class="text-blue-800 font-medium">Coimbatore District</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 4 -->
+                    <div class="timeline-item" data-category="recognition">
+                        <div class="timeline-date">Jun 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="https://images.unsplash.com/photo-1581093450023-6b1ea6b77d0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                                        alt="Best Workshop" class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Recognition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-star text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Best Technical Workshop Series Award</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Recognized for organizing the most comprehensive and impactful technical workshop
+                                    series on
+                                    "Industry 4.0 and Smart Manufacturing," attended by over 300 students from 12
+                                    colleges.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop
+                                        Excellence</span>
+                                    <span class="text-blue-800 font-medium">ASME India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Section -->
+            <div class="text-center">
+                <button class="load-more-btn text-white px-8 py-4 rounded-lg font-medium shadow-lg" id="load-more">
+                    <i class="fas fa-plus mr-2"></i>
+                    Load More Achievements
+                </button>
+                <p class="text-gray-600 mt-4 text-sm">More achievements will be added regularly</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6">Be Part of Our Success Story</h3>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Join ASME SRIT Student Section and contribute to our legacy of excellence, innovation, and community
+                impact
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#membership"
+                    class="bg-white text-blue-800 px-8 py-4 rounded-lg font-bold hover:bg-blue-100 transition">
+                    <i class="fas fa-user-plus mr-2"></i>
+                    Join Our Team
+                </a>
+                <a href="index.html#contact"
+                    class="border-2 border-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-blue-800 transition">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-5">About ASME SRIT</h3>
+                    <p class="text-blue-200">The ASME Student Section at SR Institute of Technology provides students
+                        with opportunities for professional development, technical growth, and leadership experience
+                        through innovative programs and events.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="index.html#about" class="text-blue-200 hover:text-white transition">About</a></li>
+                        <li><a href="index.html#events" class="text-blue-200 hover:text-white transition">Events</a>
+                        </li>
+                        <li><a href="index.html#gallery" class="text-blue-200 hover:text-white transition">Gallery</a>
+                        </li>
+                        <li><a href="#" class="text-white font-medium">Achievements</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">Achievement Categories</h3>
+                    <ul class="space-y-3">
+                        <li><span class="text-blue-200">Competition Awards</span></li>
+                        <li><span class="text-blue-200">Innovation Recognition</span></li>
+                        <li><span class="text-blue-200">Community Impact</span></li>
+                        <li><span class="text-blue-200">Academic Excellence</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">Contact</h3>
+                    <div class="space-y-3 text-blue-200">
+                        <p>asme@sritcbe.ac.in</p>
+                        <p>+91 9677817992</p>
+                        <p>SRIT Campus, Coimbatore</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-200 mb-4 md:mb-0">© 2025 ASME SRIT Student Section. All rights reserved.</p>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Category filter functionality
+        const filterButtons = document.querySelectorAll('.category-filter');
+        const achievementItems = document.querySelectorAll('.timeline-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const category = this.dataset.category;
+
+                achievementItems.forEach(item => {
+                    const itemCategory = item.dataset.category;
+
+                    if (category === 'all' || itemCategory === category) {
+                        // Using block display, you might need to adjust if you use flex, grid, etc.
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Optional: A simple "Load More" functionality placeholder
+        // This is a basic example. For a real application, you would fetch more data.
+        document.getElementById('load-more').addEventListener('click', function () {
+            // In a real scenario, you'd load new achievement items here.
+            // For this example, we'll just show an alert and hide the button.
+            alert("More achievements will be available soon!");
+            this.style.display = 'none';
+            document.querySelector('.text-gray-600.mt-4.text-sm').textContent = "You've seen all achievements!";
+        });
+    </script>
+
+</body>
+
+</html>
