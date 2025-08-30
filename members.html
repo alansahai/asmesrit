@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASME SRIT Student Section - Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    height: {
+                        'screen-90': '90vh',
+                        'screen-80': '80vh',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(41, 134, 222, 0.85), rgba(112, 176, 235, 0.9)), url('/assets/srit-hero.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #005EB8;
+        }
+
+        .event-card:hover .event-overlay {
+            opacity: 1;
+        }
+
+        .event-overlay {
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #005EB8;
+            transition: width .3s;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: 250px;
+            grid-auto-flow: dense;
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(3n) {
+            grid-column: span 2;
+        }
+
+        .gallery-item:nth-child(5n) {
+            grid-row: span 2;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 94, 184, 0.8));
+            padding: 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .achievement-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-img {
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-card:hover .achievement-img {
+            transform: scale(1.05);
+        }
+
+        .member-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 94, 184, 0.15);
+        }
+
+        .member-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .member-img {
+            transition: all 0.5s ease;
+        }
+
+        .member-card:hover .member-img {
+            transform: scale(1.05);
+        }
+
+        .member-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 94, 184, 0.7) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .member-card:hover .member-overlay {
+            opacity: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border-radius: 50%;
+            color: #005EB8;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #005EB8;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .social-icon-sm {
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-auto-rows: 150px;
+            }
+
+            .gallery-item:nth-child(3n) {
+                grid-column: span 1;
+            }
+
+            .gallery-item:nth-child(5n) {
+                grid-row: span 1;
+            }
+
+            .social-icons {
+                gap: 8px;
+            }
+
+            .social-icon {
+                width: 26px;
+                height: 26px;
+            }
+
+            .social-icon-sm {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <span class="text-blue-800 font-bold text-2xl">ASME SRIT</span>
+    </div>
+
+    <!-- Header/Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/index.html" class="flex items-center">
+                <img src="/assets/asme-srit.png" alt="ASME Logo" class="h-12">
+                <span class="ml-2 text-xl font-bold text-blue-800">ASME SRIT Student Section</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-blue-800 font-medium">About</a>
+                <a href="#team" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Our Team</a>
+                <a href="#events" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Events</a>
+                <a href="#gallery" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Gallery</a>
+                <a href="#achievements" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Achievements</a>
+                <a href="#membership" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Membership</a>
+                <a href="#resources" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Resources</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Contact</a>
+            </div>
+
+            <button class="md:hidden text-blue-800" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">About</a>
+                <a href="#team" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Our Team</a>
+                <a href="#events" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Events</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Gallery</a>
+                <a href="#achievements"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Achievements</a>
+                <a href="#membership" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Membership</a>
+                <a href="#resources" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Resources</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-16">Our Team</h2>
+
+            <!-- Esteemed Advisors -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-12 text-center">Esteemed Advisors</h3>
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <div
+                        class="bg-gradient-to-r from-blue-100 to-blue-50 p-8 rounded-xl flex flex-col items-center text-center shadow-lg member-card">
+                        <div class="member-img-container w-40 h-40 mb-6">
+                            <img src="/assets/sanjana.jpg" alt="Sanjana N"
+                                class="w-full h-full object-cover rounded-full border-4 border-white shadow-md member-img">
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2">Ms. N. Sanjana</h4>
+                        <p class="text-blue-600 font-medium mb-3">Assistant Professor - CSE</p>
+                        <div class="social-icons">
+                            <a href="mailto:sanjana.cse@sritcbe.ac.in" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mt-3">Guiding the student section with technical expertise and academic
+                            excellence.</p>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-r from-blue-100 to-blue-50 p-8 rounded-xl flex flex-col items-center text-center shadow-lg member-card">
+                        <div class="member-img-container w-40 h-40 mb-6">
+                            <img src="/assets/immanual.jpg" alt="Immanuel R"
+                                class="w-full h-full object-cover rounded-full border-4 border-white shadow-md member-img">
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2">Mr. R. Immanual</h4>
+                        <p class="text-blue-600 font-medium mb-3">Assistant Professor - MECH</p>
+                        <div class="social-icons">
+                            <a href="mailto:immanual.me@sritcbe.ac.in" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mt-3">Mentoring students in mechanical engineering innovation and
+                            professional development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Committee -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-12 text-center">Core Committee 2025-2026</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Chair Person -->
+                    <div class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-md member-card">
+                        <div class="member-img-container w-28 h-28 mb-4">
+                            <img src="/assets/members/ajay.jpeg" alt="Ajay Vardhanan J V"
+                                class="w-full h-full object-cover rounded-full border-3 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-bold text-blue-800 mb-1">Ajay Vardhanan J V</h4>
+                        <p class="text-sm text-blue-600 font-medium">Chair Person</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">4th Year Mechanical Engineering</p>
+                    </div>
+
+                    <!-- Vice Chair Person -->
+                    <div class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-md member-card">
+                        <div class="member-img-container w-28 h-28 mb-4">
+                            <img src="/assets/members/bharathpi.jpeg" alt="Bharath P I"
+                                class="w-full h-full object-cover rounded-full border-3 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-bold text-blue-800 mb-1">Bharath P I</h4>
+                        <p class="text-sm text-blue-600 font-medium">Vice Chair Person</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">4th Year Mechanical Engineering</p>
+                    </div>
+
+                    <!-- Secretary -->
+                    <div class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-md member-card">
+                        <div class="member-img-container w-28 h-28 mb-4">
+                            <img src="/assets/members/manushree.jpeg" alt="Manushree A"
+                                class="w-full h-full object-cover rounded-full border-3 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-bold text-blue-800 mb-1">Manushree A</h4>
+                        <p class="text-sm text-blue-600 font-medium">Secretary</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">4th Year Electronics and Communication Engineering</p>
+                    </div>
+
+                    <!-- Treasurer -->
+                    <div class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-md member-card">
+                        <div class="member-img-container w-28 h-28 mb-4">
+                            <img src="/assets/members/nallasivan.png" alt="Nallasivan B"
+                                class="w-full h-full object-cover rounded-full border-3 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-bold text-blue-800 mb-1">Nallasivan B</h4>
+                        <p class="text-sm text-blue-600 font-medium">Treasurer</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">4th Year Mechanical Engineering</p>
+                    </div>
+
+                    <!-- Public Relations Head -->
+                    <div class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-md member-card">
+                        <div class="member-img-container w-28 h-28 mb-4">
+                            <img src="/assets/members/siddharth.png" alt="Siddharth A"
+                                class="w-full h-full object-cover rounded-full border-3 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-bold text-blue-800 mb-1">Siddharth A</h4>
+                        <p class="text-sm text-blue-600 font-medium">Public Relations Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">3rd Year Mechanical Engineering</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Members -->
+            <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-12 text-center">Executive Members</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+                    <!-- Technical Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/bharathe.png" alt="Bharath E"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Bharath E</h4>
+                        <p class="text-xs text-blue-600">Technical Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Membership Chair -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/rubankumar.jpg" alt="Ruban Kumar R"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Ruban Kumar R</h4>
+                        <p class="text-xs text-blue-600">Membership Chair</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Circuit Design Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/tharunbs.png" alt="Tharun B S"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Tharun B S</h4>
+                        <p class="text-xs text-blue-600">Circuit Design Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Electrical Testing Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/hariharasudhan.png" alt="Hariharasudhan M"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Hariharasudhan M</h4>
+                        <p class="text-xs text-blue-600">Electrical Testing Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Programming Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/alan.png" alt="Alan S"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Alan S</h4>
+                        <p class="text-xs text-blue-600">Programming Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Manufacturing Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/akash.jpg" alt="Akash A"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Akash A</h4>
+                        <p class="text-xs text-blue-600">Manufacturing Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- R&D Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/gowri.jpg" alt="Gowri Sankar V"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Gowri Sankar V</h4>
+                        <p class="text-xs text-blue-600">R&D Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Fabrication Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/naveen.png" alt="Naveen Kumar B"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Naveen Kumar B</h4>
+                        <p class="text-xs text-blue-600">Fabrication Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/deepana.png" alt="Deepana N S"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Deepana N S</h4>
+                        <p class="text-xs text-blue-600">Social Media Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Events Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/sharmili.png" alt="Sharmili E"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Sharmili E</h4>
+                        <p class="text-xs text-blue-600">Events Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Outreach Coordinator -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/shri_abinaya.png" alt="Shri Abinaya S"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Shri Abinaya S</h4>
+                        <p class="text-xs text-blue-600">Outreach Coordinator</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Design Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/jai.png" alt="Jai Kumar A"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Jai Kumar A</h4>
+                        <p class="text-xs text-blue-600">Design Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Head -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/girijith.png" alt="Girijith S"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Girijith S</h4>
+                        <p class="text-xs text-blue-600">Analysis Head</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Members -->
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/nagaraj.jpg" alt="Nagaraj G"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Nagaraj G</h4>
+                        <p class="text-xs text-blue-600">Member</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/ranjith.jpg" alt="Ranjith Raju A S"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Ranjith Raju A S</h4>
+                        <p class="text-xs text-blue-600">Member</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center shadow-sm member-card">
+                        <div class="member-img-container w-20 h-20 mb-3">
+                            <img src="/assets/members/titus.jpg" alt="Titus Paul H"
+                                class="w-full h-full object-cover rounded-full border-2 border-blue-200 shadow-sm member-img">
+                        </div>
+                        <h4 class="font-semibold text-sm text-blue-800 mb-1">Titus Paul H</h4>
+                        <p class="text-xs text-blue-600">Member</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon social-icon-sm" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <div class="mb-5 flex space-x-4 justify-start">
+                        <img src="/assets/asme-srit.png" alt="ASME SRIT Logo" class="h-12">
+                        <img src="/assets/SRIT - New Logo File.png" alt="SRIT Logo" class="h-12">
+                    </div>
+                    <h3 class="text-xl font-bold mb-5">About ASME SRIT</h3>
+                    <p class="text-blue-200">The ASME Student Section at Sri Ramakrishna Institute of Technology
+                        provides students
+                        with opportunities for professional development, technical growth, and leadership experience
+                        through innovative programs and events.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white transition">About</a></li>
+                        <li><a href="#team" class="text-blue-200 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#events" class="text-blue-200 hover:text-white transition">Events</a></li>
+                        <li><a href="#gallery" class="text-blue-200 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#achievements" class="text-blue-200 hover:text-white transition">Achievements</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-5">Global ASME Competitions</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://efests.asme.org/competitions/asme-extended-reality-challenge"
+                                class="text-blue-200 hover:text-white transition">ASME Extended Reality Challenge (XRC):
+                                Autonomous Vehicles</a></li>
+                        <li><a href="https://efests.asme.org/competitions/human-powered-vehicle-challenge-(hpvc)"
+                                class="text-blue-200 hover:text-white transition">ASME e-Human Powered Vehicle Challenge
+                                (e-HPVC)</a></li>
+                        <li><a href="https://efests.asme.org/competitions/student-design-competition-(sdc)"
+                                class="text-blue-200 hover:text-white transition">ASME Student Design Competition
+                                (SDC)</a></li>
+                        <li><a href="https://efests.asme.org/competitions/asme-innovative-additive-manufacturing-3d-challeng"
+                                class="text-blue-200 hover:text-white transition">ASME Innovative Additive Manufacturing
+                                3D Challenge (IAM3D®)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-200 mb-4 md:mb-0">
+                    © <span id="currentYear"></span> ASME SRIT Student Section. All rights reserved.
+                </p>
+                <div class="flex space-x-5">
+                    <a href="https://www.instagram.com/asme_srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/asme-srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // Loading screen
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                loader.style.transition = "opacity 0.5s ease";
+                setTimeout(() => loader.style.display = "none", 500);
+            }, 1000); // 1 second delay
+        });
+    </script>
+</body>
+
+</html>

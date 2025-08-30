@@ -186,25 +186,25 @@
 </head>
 
 <body class="bg-gray-50">
-    <!-- Header/Navbar -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
+            <a href="/index.html" class="flex items-center">
                 <img src="/assets/asme-srit.png" alt="ASME Logo" class="h-12">
                 <span class="ml-2 text-xl font-bold text-blue-800">ASME SRIT Student Section</span>
-            </div>
+            </a>
 
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-700 hover:text-blue-800 font-medium transition">Home</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-blue-800 font-medium transition">About</a>
-                <a href="index.html#events" class="text-gray-700 hover:text-blue-800 font-medium transition">Events</a>
-                <a href="index.html#gallery"
-                    class="text-gray-700 hover:text-blue-800 font-medium transition">Gallery</a>
-                <a href="#" class="text-blue-800 font-medium border-b-2 border-blue-800">Achievements</a>
-                <a href="index.html#membership"
-                    class="text-gray-700 hover:text-blue-800 font-medium transition">Membership</a>
-                <a href="index.html#contact"
-                    class="text-gray-700 hover:text-blue-800 font-medium transition">Contact</a>
+                <a href="/index.html#home" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Home</a>
+                <a href="/index.html#about" class="nav-link text-gray-700 hover:text-blue-800 font-medium">About</a>
+                <a href="/index.html#events" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Events</a>
+                <a href="/index.html#gallery" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Gallery</a>
+                <a href="/index.html#achievements"
+                    class="nav-link text-gray-700 hover:text-blue-800 font-medium">Achievements</a>
+                <a href="/index.html#membership"
+                    class="nav-link text-gray-700 hover:text-blue-800 font-medium">Membership</a>
+                <a href="/index.html#resources"
+                    class="nav-link text-gray-700 hover:text-blue-800 font-medium">Resources</a>
+                <a href="/index.html#contact" class="nav-link text-gray-700 hover:text-blue-800 font-medium">Contact</a>
             </div>
 
             <button class="md:hidden text-blue-800" id="mobile-menu-button">
@@ -215,15 +215,19 @@
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Home</a>
-                <a href="index.html#about" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">About</a>
-                <a href="index.html#events" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Events</a>
-                <a href="index.html#gallery"
+                <a href="/index.html#home" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Home</a>
+                <a href="/index.html#about" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">About</a>
+                <a href="/index.html#events"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Events</a>
+                <a href="/index.html#gallery"
                     class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Gallery</a>
-                <a href="#" class="block px-3 py-2 text-blue-800 bg-blue-50 rounded-md font-medium">Achievements</a>
-                <a href="index.html#membership"
+                <a href="/index.html#achievements"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Achievements</a>
+                <a href="/index.html#membership"
                     class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Membership</a>
-                <a href="index.html#contact"
+                <a href="/index.html#resources"
+                    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Resources</a>
+                <a href="/index.html#contact"
                     class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">Contact</a>
             </div>
         </div>
@@ -237,15 +241,14 @@
                 Celebrating excellence, innovation, and leadership in mechanical engineering at ASME SRIT Student
                 Section
             </p>
-
             <!-- Achievement Stats -->
             <div class="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
-                    <div class="stats-counter text-white">25+</div>
+                    <div class="stats-counter text-white">15+</div>
                     <p class="text-lg font-medium">Awards Won</p>
                 </div>
                 <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
-                    <div class="stats-counter text-white">100+</div>
+                    <div class="stats-counter text-white">20+</div>
                     <p class="text-lg font-medium">Projects Completed</p>
                 </div>
                 <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
@@ -298,8 +301,8 @@
                     <div class="achievement-card bg-white overflow-hidden" data-category="recognition">
                         <div class="grid md:grid-cols-2">
                             <div class="relative h-80 md:h-auto overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                                    alt="Best Student Section Award" class="achievement-img w-full h-full object-cover">
+                                <img src="/assets/achievements/beststusec2023.jpg" alt="Best Student Section Award"
+                                    class="achievement-img w-full h-full object-cover">
                                 <div class="achievement-category">Excellence Award</div>
                                 <div class="award-badge">
                                     <i class="fas fa-trophy"></i>
@@ -311,14 +314,14 @@
                                         <i class="fas fa-trophy text-blue-800 text-2xl"></i>
                                     </div>
                                     <span
-                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">2024</span>
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">2023</span>
                                 </div>
                                 <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">
                                     ASME India Outstanding Student Section Award
                                 </h3>
                                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
                                     ASME SRIT Student Section was honored with the prestigious Outstanding Student
-                                    Section Award for 2024,
+                                    Section Award for 2023,
                                     recognizing our exceptional programming, innovative events, outstanding member
                                     engagement, and significant
                                     contributions to advancing mechanical engineering education and professional
@@ -336,7 +339,7 @@
                                 </div>
                                 <div class="flex items-center text-blue-800">
                                     <i class="fas fa-calendar mr-2"></i>
-                                    <span class="font-medium">Awarded: December 2024</span>
+                                    <span class="font-medium">Awarded: December 2023</span>
                                 </div>
                             </div>
                         </div>
@@ -347,134 +350,1002 @@
             <!-- Timeline of Achievements -->
             <div class="mb-16">
                 <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-12 text-center">Achievement Timeline</h3>
-
                 <div class="timeline-container max-w-6xl mx-auto">
                     <div class="timeline-line"></div>
 
-                    <!-- Achievement 1 -->
-                    <div class="timeline-item" data-category="competition">
-                        <div class="timeline-date">Nov 2024</div>
+                    <!-- 2025 -->
+                    <!-- Behind the Scenes: Event Management -->
+                    <div class="timeline-item" data-category="workshop">
+                        <div class="timeline-date">30 Aug 2025</div>
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="achievement-card bg-white p-6">
                                 <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
-                                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                        alt="E-Fest Competition" class="achievement-img w-full h-full object-cover">
-                                    <div class="achievement-category">Competition</div>
+                                    <img src="/assets/achievements/2025eventmgmt.jpg" alt="Event Management Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
                                 </div>
                                 <div class="flex items-center mb-3">
                                     <div class="bg-blue-100 p-2 rounded-full mr-3">
-                                        <i class="fas fa-medal text-blue-800 text-lg"></i>
+                                        <i class="fas fa-chalkboard-teacher text-blue-800 text-lg"></i>
                                     </div>
-                                    <h4 class="text-xl font-bold">ASME E-Fest Regional Champions</h4>
+                                    <h4 class="text-xl font-bold">Behind the Scenes: How to Manage Events Like a Pro
+                                    </h4>
                                 </div>
                                 <p class="text-gray-600 mb-4">
-                                    Our team secured first place in the Human Powered Vehicle Challenge at ASME E-Fest
-                                    Regionals,
-                                    demonstrating exceptional engineering design and innovation against 25 competing
-                                    teams.
+                                    Training session guiding students on effective event planning, logistics, and
+                                    teamwork for professional execution of campus activities.
                                 </p>
                                 <div class="flex justify-between items-center">
                                     <span
-                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">1st
-                                        Place</span>
-                                    <span class="text-blue-800 font-medium">Chennai Region</span>
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">ASME-SRIT</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Achievement 2 -->
-                    <div class="timeline-item" data-category="innovation">
-                        <div class="timeline-date">Sep 2024</div>
+                    <!-- Kindness Visit to Senior Citizens Home -->
+                    <div class="timeline-item" data-category="community">
+                        <div class="timeline-date">Aug 2025</div>
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="achievement-card bg-white p-6">
                                 <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
-                                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                        alt="Innovation Award" class="achievement-img w-full h-full object-cover">
+                                    <img src="/assets/achievements/2025besthome.jpeg" alt="Senior Citizens Visit"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Community Service</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-heart text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Kindness Visit to Senior Citizens Home</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Nearly 25 ASME-SRIT members visited Senior Citizens Home in Mathipalayam, sharing
+                                    stories, smiles, and compassion, bridging generations with warmth, empathy, and joy.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Community</span>
+                                    <span class="text-blue-800 font-medium">ASME-SRIT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Autosports India – Mega Karting Championship -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">11-13 Apr 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/kartingchamp.png" alt="Karting Championship"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Competition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-flag-checkered text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Autosports India - Mega Karting Championship</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Hosted at SRIT; Team Garudans emerged overall champions, winning ₹30,000 cash prize
+                                    plus multiple awards in drag race, skid pad, and autocross events.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Overall
+                                        Champions</span>
+                                    <span class="text-blue-800 font-medium">Autosports India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prototype/Process Design Workshop -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">4 Mar 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025prototype.png" alt="Prototype Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-tools text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Prototype/Process Design Workshop</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Hands-on session on product development led by Vegroute CEO; students initiated
+                                    prototype projects bridging innovation concepts to practical applications.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">Vegroute</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales & Marketing for Startups -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">22 Feb 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025salesnmarketing.png" alt="Startup Marketing"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Entrepreneurship</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-bullhorn text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Sales & Marketing for Startups</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Workshop on sales strategies, customer persuasion, branding, and market fit
+                                    alignment to help budding entrepreneurs grow sustainable businesses.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">HIVE SRIT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem-Solution Fit -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">22 Feb 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025marketfit.png" alt="Startup Validation"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Startup</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-lightbulb text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Problem-Solution & Product-Market Fit</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Training session on startup validation, pivoting strategies, customer personas, and
+                                    identifying real market demand for innovative products.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Training</span>
+                                    <span class="text-blue-800 font-medium">Startup India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tamil Nadu Karting Championship -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">4 - 7 Feb 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/tnkcs2feb.png" alt="Karting Event"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Competition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-trophy text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Tamil Nadu Karting Championship - Season 2</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Team Garudans won Best Build Quality, Skid Pad event, and recognition for
+                                    professionalism in documentation at this state-level motorsport challenge.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Winners</span>
+                                    <span class="text-blue-800 font-medium">TNKC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Thinking, Critical Thinking & Innovation -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">25 Jan 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025dtworkshop.png" alt="Design Thinking Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-brain text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Design Thinking, Critical Thinking & Innovation</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    One-day workshop engaging students and faculty in empathy mapping, innovation
+                                    frameworks, and real-world design challenges.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">SRIT Innovation Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Innovation Ignite -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">6 Dec 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025innoignite.png" alt="Innovation Ignite"
+                                        class="achievement-img w-full h-full object-cover">
                                     <div class="achievement-category">Innovation</div>
                                 </div>
                                 <div class="flex items-center mb-3">
                                     <div class="bg-blue-100 p-2 rounded-full mr-3">
                                         <i class="fas fa-lightbulb text-blue-800 text-lg"></i>
                                     </div>
-                                    <h4 class="text-xl font-bold">Smart Manufacturing Innovation Award</h4>
+                                    <h4 class="text-xl font-bold">Innovation Ignite</h4>
                                 </div>
                                 <p class="text-gray-600 mb-4">
-                                    Recognized for developing an IoT-based predictive maintenance system for
-                                    manufacturing equipment,
-                                    reducing downtime by 40% and maintenance costs by 30% in local industries.
+                                    Industry-led session that strengthened creative thinking and entrepreneurial
+                                    mindset, teaching students practical innovation frameworks.
                                 </p>
                                 <div class="flex justify-between items-center">
                                     <span
-                                        class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">Innovation</span>
-                                    <span class="text-blue-800 font-medium">Tamil Nadu State</span>
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">Seminar</span>
+                                    <span class="text-blue-800 font-medium">Industry Leaders</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Achievement 3 -->
+                    <!-- National Pollution Control Day – EV Awareness -->
                     <div class="timeline-item" data-category="community">
-                        <div class="timeline-date">Aug 2024</div>
+                        <div class="timeline-date">2 Dec 2024</div>
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="achievement-card bg-white p-6">
                                 <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
-                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                        alt="Community Impact" class="achievement-img w-full h-full object-cover">
+                                    <img src="/assets/achievements/2025evawareness.png" alt="EV Awareness"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Community Impact</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-leaf text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">National Pollution Control Day – EV Awareness</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Awareness event highlighting how electric vehicles reduce urban pollution and
+                                    improve sustainability in transportation systems.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Awareness</span>
+                                    <span class="text-blue-800 font-medium">SRIT Green Club</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entrepreneurship & Innovation as Career -->
+                    <div class="timeline-item" data-category="entrepreneurship">
+                        <div class="timeline-date">29 Nov 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025innocareer.png" alt="Entrepreneurship Career"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Entrepreneurship</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-rocket text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Entrepreneurship & Innovation as Career</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Interactive session motivating students to explore entrepreneurship, covering
+                                    finance, planning, strategy, and socially responsible innovation.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">Career
+                                        Talk</span>
+                                    <span class="text-blue-800 font-medium">HIVE SRIT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem Solving & Ideation Workshop -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">29 Nov 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025ideathonworkshop.png" alt="Ideation Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-lightbulb text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Problem Solving & Ideation Workshop</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Mentorship-driven event teaching brainstorming, user-centric design, and idea
+                                    evaluation for innovation-driven projects.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">SRIT Innovation Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Basics of IPR for Innovators -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">28 Nov 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025basicsofipr.png" alt="IPR Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">IPR</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-certificate text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Basics of IPR for Innovators</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Workshop explaining intellectual property rights and their importance for startups,
+                                    with practical tips on idea-to-patent transformation.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">IPR</span>
+                                    <span class="text-blue-800 font-medium">Patent Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ASME TN-NOVATE SDG Innovation Expo -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">8 Nov 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/tnnovate1.jpg" alt="SDG Innovation Expo"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Innovation Expo</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-globe text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">ASME TN-NOVATE SDG Innovation Expo</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Hosted at SRIT, this expo showcased student innovations aligned with UN Sustainable
+                                    Development Goals, awarding USD 600 in prizes.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Expo</span>
+                                    <span class="text-blue-800 font-medium">ASME TN Section</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hands-on Training on Drafting Patent Form -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">15 Oct 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2024patentfiling.png" alt="Patent Drafting"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">IPR</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-file-alt text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Hands-on Training on Drafting Patent Form</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Interactive workshop on patent filing, covering claims, specifications, and
+                                    documentation as per Indian Patent Act.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">Patent</span>
+                                    <span class="text-blue-800 font-medium">IPR Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Innovate in 3D – CAD Workshop -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">14-18 Oct 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2024innoin3d.png" alt="CAD Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-cube text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Innovate in 3D - CAD Workshop</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Five-day Siemens Solid Edge training, enabling mechanical students to design
+                                    professional 3D models with industry standards.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">Siemens</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hands-on Innovation: Design Thinking -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">7 Oct 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2024hoidt.png" alt="Design Thinking"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-brain text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Hands-on Innovation: Design Thinking</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Practical session on design thinking methodologies with activities in ideation,
+                                    persona creation, and paper prototyping.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">Innovation Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hands-on Training on Patent Search -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">30 Sep 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2024patentsearching.png" alt="Patent Search Training"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">IPR</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-search text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Hands-on Training on Patent Search</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Workshop equipping students with skills to navigate patent databases,
+                                    classifications, and search strategies using real-world examples.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">Patent</span>
+                                    <span class="text-blue-800 font-medium">IPR Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patents & Achievements -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">2024-25</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2025patent.png" alt="Patents Achievements"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Recognition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-award text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Patents & Achievements</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Three patents granted, nine filed; Mr. Immanual won ASME Outstanding Advisor Award
+                                    ($500); AI-driven project shortlisted at L&T Techgium 2025.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Recognition</span>
+                                    <span class="text-blue-800 font-medium">ASME & L&T</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ASME E-Fest -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">16 Mar 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2024efest.png" alt="ASME E-Fest 2024"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Competition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-medal text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">ASME E-Fest</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Students secured 3rd place in Autonomous Vehicles ($75), won gift cards, and SRIT
+                                    topped the ASME leaderboard.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">3rd
+                                        Place</span>
+                                    <span class="text-blue-800 font-medium">Global Event</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kart Racing Championship – Season 3 -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">26-29 Feb 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2024kart.png" alt="Kart Racing 2024"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Motorsport</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-flag-checkered text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Kart Racing Championship - Season 3</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Team Garudans won multiple awards including Best Design, Aesthetics, Lightweight
+                                    Build, and Female Endurance at Kari Motors Speedway.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Winners</span>
+                                    <span class="text-blue-800 font-medium">Kari Speedway</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- B-SPARK Innovation 2023 – Pitch Competition -->
+                    <div class="timeline-item" data-category="entrepreneurship">
+                        <div class="timeline-date">17 Oct 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023bspark.png" alt="B-SPARK Pitch 2023"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Startup Pitch</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-rocket text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">B-SPARK Innovation 2023 - Pitch Competition</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Pitch competition for startups and students in collaboration with SRIT E-Cell;
+                                    winners received certificates and prizes with judge feedback.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">Pitch</span>
+                                    <span class="text-blue-800 font-medium">E-Cell</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Best Home in Town – Old Age Home Visit -->
+                    <div class="timeline-item" data-category="community">
+                        <div class="timeline-date">3 Sep 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023besthomeintown.png" alt="Old Age Home Visit 2023"
+                                        class="achievement-img w-full h-full object-cover">
                                     <div class="achievement-category">Community Impact</div>
                                 </div>
                                 <div class="flex items-center mb-3">
                                     <div class="bg-blue-100 p-2 rounded-full mr-3">
                                         <i class="fas fa-heart text-blue-800 text-lg"></i>
                                     </div>
-                                    <h4 class="text-xl font-bold">STEM Excellence in Community Outreach</h4>
+                                    <h4 class="text-xl font-bold">Best Home in Town - Old Age Home Visit</h4>
                                 </div>
                                 <p class="text-gray-600 mb-4">
-                                    Awarded for conducting comprehensive STEM education programs that reached over 1,000
-                                    students
-                                    from 15 local schools, inspiring the next generation to pursue engineering careers.
+                                    Students served food and engaged with residents, continuing their annual tradition
+                                    of celebrating achievements with kindness.
                                 </p>
                                 <div class="flex justify-between items-center">
                                     <span
-                                        class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-bold">Community
-                                        Service</span>
-                                    <span class="text-blue-800 font-medium">Coimbatore District</span>
+                                        class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-bold">Community</span>
+                                    <span class="text-blue-800 font-medium">SRIT Social Club</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Achievement 4 -->
-                    <div class="timeline-item" data-category="recognition">
-                        <div class="timeline-date">Jun 2024</div>
+                    <!-- Autonomous Drone Development Challenge
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">25-26 Aug 2023</div>
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="achievement-card bg-white p-6">
                                 <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
-                                    <img src="https://images.unsplash.com/photo-1581093450023-6b1ea6b77d0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                        alt="Best Workshop" class="achievement-img w-full h-full object-cover">
+                                    <img src="" alt="Drone Challenge 2023"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Competition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-helicopter text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Autonomous Drone Development Challenge</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Team Garudans participated at KCG College, Chennai; secured 13th place among 33
+                                    teams in their first attempt.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">13th
+                                        Place</span>
+                                    <span class="text-blue-800 font-medium">KCG College</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Patents & Faculty Achievements -->
+                    <div class="timeline-item" data-category="recognition">
+                        <div class="timeline-date">2023-24</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023memberatlargeimman.png"
+                                        alt="Patents Faculty Achievements"
+                                        class="achievement-img w-full h-full object-cover">
                                     <div class="achievement-category">Recognition</div>
                                 </div>
                                 <div class="flex items-center mb-3">
                                     <div class="bg-blue-100 p-2 rounded-full mr-3">
-                                        <i class="fas fa-star text-blue-800 text-lg"></i>
+                                        <i class="fas fa-award text-blue-800 text-lg"></i>
                                     </div>
-                                    <h4 class="text-xl font-bold">Best Technical Workshop Series Award</h4>
+                                    <h4 class="text-xl font-bold">Patents & Faculty Achievements</h4>
                                 </div>
                                 <p class="text-gray-600 mb-4">
-                                    Recognized for organizing the most comprehensive and impactful technical workshop
-                                    series on
-                                    "Industry 4.0 and Smart Manufacturing," attended by over 300 students from 12
-                                    colleges.
+                                    Three patents granted, nine filed; Mr. Immanual became ASME TN Section
+                                    Member-at-Large and earned Drone Ranking commendation.
                                 </p>
                                 <div class="flex justify-between items-center">
                                     <span
-                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop
-                                        Excellence</span>
-                                    <span class="text-blue-800 font-medium">ASME India</span>
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Recognition</span>
+                                    <span class="text-blue-800 font-medium">ASME TN Section</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Best Home in Town – Old Age Home Visit -->
+                    <div class="timeline-item" data-category="community">
+                        <div class="timeline-date">23 Apr 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023bhintown.png" alt="Old Age Home Visit 2023"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Community Impact</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-heart text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Best Home in Town - Old Age Home Visit</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Students visited an old age home, served food, and gained valuable life lessons on
+                                    empathy and compassion.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-bold">Community</span>
+                                    <span class="text-blue-800 font-medium">SRIT Social Club</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ASME EFX -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">1 Apr 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023efest.png" alt="ASME EFX 2023"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Hackathon</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-code text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">ASME EFX</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Students participated in Design Hackathon and secured runner-up position with
+                                    ₹20,000 prize.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Runner-up</span>
+                                    <span class="text-blue-800 font-medium">National Event</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- I AM 3D – Hovercraft Design -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">Mar 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023iam3d.png" alt="Hovercraft Design 2023"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Design Challenge</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-medal text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">IAM 3D - Hovercraft Design</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Teams designed hovercrafts per ASME rules; Team Garudans won 1st place and ₹8,000
+                                    cash prize.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">1st
+                                        Prize</span>
+                                    <span class="text-blue-800 font-medium">₹8,000 Reward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ASME E-Fest -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">Nov 2022 & 25 Mar 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2023efx.png" alt="ASME E-Fest 2023"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Competition</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-medal text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">ASME E-Fest</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Students won scavenger hunt gift cards, 3rd place in Lunar Lander ($75), and
+                                    celebrated engineering innovation.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">3rd
+                                        Place</span>
+                                    <span class="text-blue-800 font-medium">Global Event</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- National Workshop on 3D Printing -->
+                    <div class="timeline-item" data-category="innovation">
+                        <div class="timeline-date">27 Jan 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets//achievements/20223dprinting.png" alt="3D Printing Workshop"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Workshop</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-cube text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">National Workshop on 3D Printing</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    One-day event with demonstrations of 3D printing technology, attended by 25
+                                    students.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">National Level</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Energy Conservation Week -->
+                    <div class="timeline-item" data-category="community">
+                        <div class="timeline-date">11-17 Dec 2022</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2022energyawareness.png"
+                                        alt="Energy Conservation 2022"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Community Awareness</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-leaf text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Energy Conservation Week</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Activities included slogan contest, oral presentations, workshops, and webinar on
+                                    energy conservation and appliance efficiency.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-bold">Awareness</span>
+                                    <span class="text-blue-800 font-medium">Green Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cricket Bat Design Challenge – Season 2 -->
+                    <div class="timeline-item" data-category="competition">
+                        <div class="timeline-date">11-13 Oct 2022</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2022cbdc.png" alt="Cricket Bat Design Challenge 2022"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Design Challenge</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-baseball-bat-ball text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Cricket Bat Design Challenge - Season 2</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Hands-on bat-making competition followed by cricket matches; included LinkedIn
+                                    selfie contest, won by Team Sharks.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Winner</span>
+                                    <span class="text-blue-800 font-medium">ASME LinkedIn</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entrepreneurial Funding for Drone Tech Startups -->
+                    <div class="timeline-item" data-category="entrepreneurship">
+                        <div class="timeline-date">13 Sep 2022</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="achievement-card bg-white p-6">
+                                <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                                    <img src="/assets/achievements/2022dronetech.png" alt="Drone Tech Workshop 2022"
+                                        class="achievement-img w-full h-full object-cover">
+                                    <div class="achievement-category">Entrepreneurship</div>
+                                </div>
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i class="fas fa-lightbulb text-blue-800 text-lg"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold">Entrepreneurial Funding for Drone Tech Startups</h4>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Seminar on funding opportunities for drone startups, followed by faculty-led drone
+                                    awareness session.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">Workshop</span>
+                                    <span class="text-blue-800 font-medium">AIIRF-EDII</span>
                                 </div>
                             </div>
                         </div>
@@ -482,9 +1353,10 @@
                 </div>
             </div>
 
+
             <!-- Load More Section -->
             <div class="text-center">
-                <button class="load-more-btn text-white px-8 py-4 rounded-lg font-medium shadow-lg" id="load-more">
+                <button class="load-more-btn text-white px-8 py-4 rounded-lg font-medium shadow-lg" id="loadMoreBtn">
                     <i class="fas fa-plus mr-2"></i>
                     Load More Achievements
                 </button>
@@ -502,12 +1374,12 @@
                 impact
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="index.html#membership"
+                <a href="#membership"
                     class="bg-white text-blue-800 px-8 py-4 rounded-lg font-bold hover:bg-blue-100 transition">
                     <i class="fas fa-user-plus mr-2"></i>
                     Join Our Team
                 </a>
-                <a href="index.html#contact"
+                <a href="#contact"
                     class="border-2 border-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-blue-800 transition">
                     <i class="fas fa-envelope mr-2"></i>
                     Contact Us
@@ -521,8 +1393,13 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-10 mb-10">
                 <div>
+                    <div class="mb-5 flex space-x-4 justify-start">
+                        <img src="/assets/asme-srit.png" alt="ASME SRIT Logo" class="h-12">
+                        <img src="/assets/SRIT - New Logo File.png" alt="SRIT Logo" class="h-12">
+                    </div>
                     <h3 class="text-xl font-bold mb-5">About ASME SRIT</h3>
-                    <p class="text-blue-200">The ASME Student Section at SR Institute of Technology provides students
+                    <p class="text-blue-200">The ASME Student Section at Sri Ramakrishna Institute of Technology
+                        provides students
                         with opportunities for professional development, technical growth, and leadership experience
                         through innovative programs and events.
                     </p>
@@ -531,53 +1408,95 @@
                 <div>
                     <h3 class="text-xl font-bold mb-5">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-blue-200 hover:text-white transition">Home</a></li>
-                        <li><a href="index.html#about" class="text-blue-200 hover:text-white transition">About</a></li>
-                        <li><a href="index.html#events" class="text-blue-200 hover:text-white transition">Events</a>
+                        <li><a href="#home" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white transition">About</a></li>
+                        <li><a href="#events" class="text-blue-200 hover:text-white transition">Events</a></li>
+                        <li><a href="#gallery" class="text-blue-200 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#achievements" class="text-blue-200 hover:text-white transition">Achievements</a>
                         </li>
-                        <li><a href="index.html#gallery" class="text-blue-200 hover:text-white transition">Gallery</a>
-                        </li>
-                        <li><a href="#" class="text-white font-medium">Achievements</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="text-xl font-bold mb-5">Achievement Categories</h3>
+                    <h3 class="text-xl font-bold mb-5">Global ASME Competitions</h3>
                     <ul class="space-y-3">
-                        <li><span class="text-blue-200">Competition Awards</span></li>
-                        <li><span class="text-blue-200">Innovation Recognition</span></li>
-                        <li><span class="text-blue-200">Community Impact</span></li>
-                        <li><span class="text-blue-200">Academic Excellence</span></li>
+                        <li><a href="https://efests.asme.org/competitions/asme-extended-reality-challenge"
+                                class="text-blue-200 hover:text-white transition">ASME Extended Reality Challenge (XRC):
+                                Autonomous Vehicles</a></li>
+                        <li><a href="https://efests.asme.org/competitions/human-powered-vehicle-challenge-(hpvc)"
+                                class="text-blue-200 hover:text-white transition">ASME e-Human Powered Vehicle Challenge
+                                (e-HPVC)</a></li>
+                        <li><a href="https://efests.asme.org/competitions/student-design-competition-(sdc)"
+                                class="text-blue-200 hover:text-white transition">ASME Student Design Competition
+                                (SDC)</a></li>
+                        <li><a href="https://efests.asme.org/competitions/asme-innovative-additive-manufacturing-3d-challeng"
+                                class="text-blue-200 hover:text-white transition">ASME Innovative Additive Manufacturing
+                                3D Challenge (IAM3D®)</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-5">Contact</h3>
-                    <div class="space-y-3 text-blue-200">
-                        <p>asme@sritcbe.ac.in</p>
-                        <p>+91 9677817992</p>
-                        <p>SRIT Campus, Coimbatore</p>
+                <!-- <div>
+                    <h3 class="text-xl font-bold mb-5">Stay Updated</h3>
+                    <p class="text-blue-200 mb-5">Subscribe to our newsletter for the latest updates on events,
+                        workshops, and opportunities.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email address"
+                            class="px-4 py-3 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                        <button class="bg-blue-800 px-4 py-3 rounded-r-lg hover:bg-blue-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-blue-200 mb-4 md:mb-0">© 2025 ASME SRIT Student Section. All rights reserved.</p>
+                <p class="text-blue-200 mb-4 md:mb-0">
+                    © <span id="currentYear"></span> ASME SRIT Student Section. All rights reserved.
+                </p>
                 <div class="flex space-x-5">
-                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
-                            class="fab fa-youtube"></i></a>
+                    <!-- <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
+                            class="fab fa-facebook-f"></i></a> -->
+                    <a href="https://www.instagram.com/asme_srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/asme-srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-linkedin-in"></i></a>
+                    <!-- <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
+                            class="fab fa-youtube"></i></a> -->
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".timeline-item");
+            const loadMoreBtn = document.getElementById("loadMoreBtn");
+            let currentIndex = 0;
+            const batchSize = 5;
+
+            // Hide all items initially
+            items.forEach((item, index) => {
+                if (index >= batchSize) {
+                    item.style.display = "none";
+                }
+            });
+            currentIndex = batchSize;
+
+            loadMoreBtn.addEventListener("click", () => {
+                for (let i = currentIndex; i < currentIndex + batchSize && i < items.length; i++) {
+                    items[i].style.display = "block";
+                }
+                currentIndex += batchSize;
+
+                if (currentIndex >= items.length) {
+                    loadMoreBtn.textContent = "You’ve seen all the achievements 🎉";
+                    loadMoreBtn.disabled = true;
+                    loadMoreBtn.classList.add("bg-gray-400", "cursor-not-allowed");
+                }
+            });
+        });
+
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function () {
             const menu = document.getElementById('mobile-menu');
@@ -621,7 +1540,6 @@
             document.querySelector('.text-gray-600.mt-4.text-sm').textContent = "You've seen all achievements!";
         });
     </script>
-
 </body>
 
 </html>
