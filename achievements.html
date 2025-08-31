@@ -28,7 +28,7 @@
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(0, 94, 184, 0.85), rgba(0, 94, 184, 0.9)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(16, 133, 242, 0.85), rgba(161, 209, 255, 0.9)), url('/assets/srit-hero.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -186,6 +186,12 @@
 </head>
 
 <body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <span class="text-blue-800 font-bold text-2xl">ASME SRIT</span>
+    </div>
+
+    <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="/index.html" class="flex items-center">
@@ -1408,11 +1414,14 @@
                 <div>
                     <h3 class="text-xl font-bold mb-5">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-blue-200 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-blue-200 hover:text-white transition">About</a></li>
-                        <li><a href="#events" class="text-blue-200 hover:text-white transition">Events</a></li>
-                        <li><a href="#gallery" class="text-blue-200 hover:text-white transition">Gallery</a></li>
-                        <li><a href="#achievements" class="text-blue-200 hover:text-white transition">Achievements</a>
+                        <li><a href="/index.html#home" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="/index.html#about" class="text-blue-200 hover:text-white transition">About</a></li>
+                        <li><a href="/index.html#events" class="text-blue-200 hover:text-white transition">Events</a>
+                        </li>
+                        <li><a href="/index.html#gallery" class="text-blue-200 hover:text-white transition">Gallery</a>
+                        </li>
+                        <li><a href="/index.html#achievements"
+                                class="text-blue-200 hover:text-white transition">Achievements</a>
                         </li>
                     </ul>
                 </div>
@@ -1468,6 +1477,15 @@
     </footer>
 
     <script>
+        // Loading screen
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                loader.style.transition = "opacity 0.5s ease";
+                setTimeout(() => loader.style.display = "none", 500);
+            }, 1000); // 1 second delay
+        });
 
         document.addEventListener("DOMContentLoaded", () => {
             const items = document.querySelectorAll(".timeline-item");
