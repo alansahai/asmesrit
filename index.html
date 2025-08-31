@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASME SRIT Student Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Browser / Mobile Address Bar Color -->
+    <meta name="theme-color" content="#1D4ED8"> <!-- Your site’s blue -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-navbutton-color" content="#1D4ED8">
+    <!-- Favicon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -19,6 +24,7 @@
             }
         }
     </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -651,7 +657,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-16">Student Resources</h2>
 
-            <div class="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
                 <!-- Handbook & Guides -->
                 <div class="bg-white p-8 rounded-xl shadow-lg">
@@ -773,7 +779,7 @@
                                 <h4 class="font-bold text-lg">Annual Report 2022 - 2023</h4>
                                 <p class="text-gray-600">Overview of activities and achievements from the 2022 - 2023
                                     year.</p>
-                                <a href="/assets/reports/asme report 2022-2023 1234.pdf" target="_blank"
+                                <a href="/assets/reports/asme report 2022-2023 1234.pdf"
                                     class="text-blue-800 hover:underline text-sm mt-2 inline-block">Download Report</a>
                             </div>
                         </div>
@@ -783,7 +789,7 @@
                             <div>
                                 <h4 class="font-bold text-lg">Annual Report 2023 - 2024</h4>
                                 <p class="text-gray-600">Highlights and growth during the 2023 - 2024 academic year.</p>
-                                <a href="/assets/reports/ASME REPORT 2023-2024.pdf" target="_blank"
+                                <a href="/assets/reports/ASME REPORT 2023-2024.pdf"
                                     class="text-blue-800 hover:underline text-sm mt-2 inline-block">Download Report</a>
                             </div>
                         </div>
@@ -793,12 +799,26 @@
                             <div>
                                 <h4 class="font-bold text-lg">Annual Report 2024 - 2025</h4>
                                 <p class="text-gray-600">Latest updates, projects, and future plans for 2024 - 2025.</p>
-                                <a href="/assets/reports/ASME REPORT 2024-25.pdf" target="_blank"
+                                <a href="/assets/reports/ASME REPORT 2024-25.pdf"
                                     class="text-blue-800 hover:underline text-sm mt-2 inline-block">Download Report</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Full Width Submit Section -->
+            <div class="col-span-3 bg-white p-6 rounded-xl shadow-md mt-6 text-center">
+                <h4 class="font-bold text-xl mb-2 text-blue-800">Share Event Information</h4>
+                <p class="text-gray-600 mb-4">Submit your event details and after-activity reports directly through our
+                    Airtable form.</p>
+                <a href="https://airtable.com/appQ0BwEPfI38mQWE/shrmyDrqJbL3Azs3h" target="_blank"
+                    class="inline-flex items-center justify-center w-full md:w-1/2 px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M2.94 2.94a1.5 1.5 0 012.12 0l12 12a1.5 1.5 0 01-2.12 2.12l-12-12a1.5 1.5 0 010-2.12zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" />
+                    </svg>
+                    Submit Form
+                </a>
             </div>
         </div>
     </section>
@@ -998,33 +1018,38 @@
                 </div>
 
                 <!-- <div>
-                    <h3 class="text-xl font-bold mb-5">Stay Updated</h3>
-                    <p class="text-blue-200 mb-5">Subscribe to our newsletter for the latest updates on events,
-                        workshops, and opportunities.</p>
-                    <div class="flex">
-                        <input type="email" placeholder="Your email address"
-                            class="px-4 py-3 rounded-l-lg text-gray-800 w-full focus:outline-none">
-                        <button class="bg-blue-800 px-4 py-3 rounded-r-lg hover:bg-blue-700 transition">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div> -->
+                <h3 class="text-xl font-bold mb-5">Stay Updated</h3>
+                <p class="text-blue-200 mb-5">Subscribe to our newsletter for the latest updates on events,
+                    workshops, and opportunities.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email address"
+                        class="px-4 py-3 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                    <button class="bg-blue-800 px-4 py-3 rounded-r-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div> -->
             </div>
 
-            <div class="pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-blue-200 mb-4 md:mb-0">
+            <div class="pt-8 border-t border-blue-800 flex justify-center space-x-5">
+                <a href="https://www.instagram.com/asme_srit/" target="_blank"
+                    class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/asme-srit/" target="_blank"
+                    class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Separate bottom copyright & dev line -->
+            <div class="pt-6 text-center">
+                <p class="text-blue-200 text-sm">
                     © <span id="currentYear"></span> ASME SRIT Student Section. All rights reserved.
                 </p>
-                <div class="flex space-x-5">
-                    <!-- <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
-                            class="fab fa-facebook-f"></i></a> -->
-                    <a href="https://www.instagram.com/asme_srit/" target="_blank"
-                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/asme-srit/" target="_blank"
-                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-linkedin-in"></i></a>
-                    <!-- <a href="#" class="text-blue-200 hover:text-white transition text-xl"><i
-                            class="fab fa-youtube"></i></a> -->
-                </div>
+                <p class="text-blue-300 text-sm mt-2">
+                    Developed with ❤️ by
+                    <a href="https://www.linkedin.com/in/alan-s-9385a328a" target="_blank"
+                        class="underline hover:text-white">
+                        Alan S.
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
