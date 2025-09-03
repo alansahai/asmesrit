@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASME SRIT Student Section - Our Team</title>
+    <link rel="icon" type="image/png" href="/assets/asme-srit.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -242,6 +243,28 @@
                 height: 22px;
             }
         }
+
+        /* marquee animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .asme-marquee {
+            animation: marquee 18s linear infinite;
+            will-change: transform;
+        }
+
+        .asme-marquee:focus,
+        .asme-marquee:hover {
+            animation-play-state: paused;
+            /* pause on hover or focus for accessibility */
+        }
     </style>
 </head>
 
@@ -298,6 +321,24 @@
             </div>
         </div>
     </header>
+
+    <!-- 🔹 Marquee Section (Full Width + Sticky) -->
+    <div class="w-full bg-blue-700 text-white sticky top-[72px] z-40">
+        <!-- adjust top-[72px] depending on your navbar height -->
+        <div class="relative overflow-hidden">
+            <div tabindex="0" class="asme-marquee whitespace-nowrap py-2">
+                <span class="inline-block mr-6 font-semibold">
+                    ASME SRIT — TNNOVATE Registration is OPEN!
+                </span>
+                <a href="https://konfhub.com/tnnovate2" target="_blank" rel="noopener noreferrer"
+                    class="inline-block mr-6 underline font-bold focus:outline-none focus:ring-2 focus:ring-white/60">
+                    Click here to Register → TNNOVATE Registration
+                </a>
+                <span class="inline-block mr-6">Hurry up! Limited slots available 🚀</span>
+            </div>
+        </div>
+    </div>
+    <!-- 🔹 End Marquee -->
 
     <!-- Team Section -->
     <section id="team" class="py-20 bg-white">
