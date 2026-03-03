@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads | ASME TN-NOVATE SDG Innovation Expo 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="./assets/asmewhite.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(6, 10, 20, 0.92), rgba(6, 10, 20, 0.98)), url('/assets/srit-hero.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .download-btn {
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+        }
+
+        /* marquee animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .asme-marquee {
+            animation: marquee 18s linear infinite;
+            will-change: transform;
+        }
+
+        .asme-marquee:focus,
+        .asme-marquee:hover {
+            animation-play-state: paused;
+            /* pause on hover or focus for accessibility */
+        }
+
+
+        body {
+            background-color: #060A14;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-[#060A14] text-white overflow-x-hidden relative">
+    <!-- ═══ NAVBAR ═══ -->
+    <header class="navbar" role="banner">
+        <div class="navbar__inner">
+            <a href="index.html" class="navbar__brand" aria-label="ASME SRIT Home">
+                <img src="./assets/asmesritwhite.png" alt="ASME SRIT Logo" class="navbar__logo">
+                <div class="navbar__name">ASME SRIT<span>Student Section</span></div>
+            </a>
+
+            <nav class="navbar__links" aria-label="Primary navigation">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#events" class="nav-link">Events</a>
+                <a href="index.html#gallery" class="nav-link">Gallery</a>
+                <a href="index.html#achievements" class="nav-link">Achievements</a>
+                <a href="index.html#membership" class="nav-link">Membership</a>
+                <a href="index.html#resources" class="nav-link">Resources</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="index.html#membership" class="btn btn-primary navbar__cta">Join ASME</a>
+
+            <button id="mobile-menu-button" class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+            <div class="mobile-menu__inner">
+                <a href="index.html#home" class="mobile-menu__link">Home</a>
+                <a href="index.html#about" class="mobile-menu__link">About</a>
+                <a href="index.html#events" class="mobile-menu__link">Events</a>
+                <a href="index.html#gallery" class="mobile-menu__link">Gallery</a>
+                <a href="index.html#achievements" class="mobile-menu__link">Achievements</a>
+                <a href="index.html#membership" class="mobile-menu__link">Membership</a>
+                <a href="index.html#resources" class="mobile-menu__link">Resources</a>
+                <a href="index.html#contact" class="mobile-menu__link">Contact</a>
+                <div class="mobile-menu__cta">
+                    <a href="index.html#membership" class="btn btn-primary"
+                        style="width:100%;justify-content:center;">Join
+                        ASME</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ═══ ANNOUNCEMENT BAR ═══ -->
+    <div class="announcement-bar" role="marquee" aria-label="Announcements">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="pill"><span
+                        style="width:6px;height:6px;border-radius:50%;background:#34D399;display:inline-block;box-shadow:0 0 6px #34D399;"></span>
+                    UPDATED</span>
+                <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+                <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive →
+                    efx.asmesrit.org</a>
+                <span>🚀 Explore ASME TN-NOVATE Innovations</span>
+                <a href="https://tnnovate.asmesrit.org" target="_blank" rel="noopener noreferrer">Visit →
+                    tnnovate.asmesrit.org</a>
+                <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+                <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive →
+                    efx.asmesrit.org</a>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="pill"><span
+                        style="width:6px;height:6px;border-radius:50%;background:#34D399;display:inline-block;box-shadow:0 0 6px #34D399;"></span>
+                    UPDATED</span>
+                <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+                <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive →
+                    efx.asmesrit.org</a>
+                <span>🚀 Explore ASME TN-NOVATE Innovations</span>
+                <a href="https://tnnovate.asmesrit.org" target="_blank" rel="noopener noreferrer">Visit →
+                    tnnovate.asmesrit.org</a>
+                <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+                <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive →
+                    efx.asmesrit.org</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Background Blobs -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#38BDF8] opacity-10 blur-[120px]">
+        </div>
+        <div
+            class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#818cf8] opacity-10 blur-[150px]">
+        </div>
+    </div>
+
+    <div class="relative z-10">
+        <!-- Hero Section -->
+        <section class="hero-bg text-white h-screen-80 flex items-center">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex justify-center mb-6 space-x-5">
+                    <img src="./assets/asme-tn.png" alt="ASME TN Logo" class="h-20 object-contain">
+                    <img src="./assets/asmewhite.png" alt="ASME Logo" class="h-20 object-contain">
+                    <img src="./assets/SRITlogowhite.png" alt="SRIT Logo" class="h-20 object-contain">
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Downloads</h1>
+                <h2 class="text-2xl md:text-4xl font-semibold mb-6">ASME TN-NOVATE SDG Innovation Expo 2025</h2>
+                <p class="text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed">Access all event-related
+                    documents
+                    and resources</p>
+            </div>
+        </section>
+
+        <!-- Downloads Section -->
+        <section class="py-24 bg-[#060A14] relative z-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#38BDF8] mb-4">Event Resources</h2>
+                    <p class="text-xl text-gray-300 max-w-4xl mx-auto">Download all necessary documents, guidelines, and
+                        resources for the ASME TN-NOVATE SDG Innovation Expo 2025</p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border-collapse rounded-xl overflow-hidden shadow-2xl relative z-10"
+                        style="background: rgba(13, 22, 51, 0.4); border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(16px);">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="py-5 px-6 text-left text-xs uppercase tracking-wider font-semibold text-gray-400 border-b border-[rgba(255,255,255,0.05)] bg-[rgba(6,10,20,0.8)]">
+                                    Document Title</th>
+                                <th
+                                    class="py-5 px-6 text-left text-xs uppercase tracking-wider font-semibold text-gray-400 border-b border-[rgba(255,255,255,0.05)] bg-[rgba(6,10,20,0.8)]">
+                                    Description</th>
+                                <th
+                                    class="py-5 px-6 text-center text-xs uppercase tracking-wider font-semibold text-gray-400 border-b border-[rgba(255,255,255,0.05)] bg-[rgba(6,10,20,0.8)]">
+                                    Format</th>
+                                <th
+                                    class="py-5 px-6 text-center text-xs uppercase tracking-wider font-semibold text-gray-400 border-b border-[rgba(255,255,255,0.05)] bg-[rgba(6,10,20,0.8)]">
+                                    Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+                                <td class="py-5 px-6 font-semibold text-white">Problem Statement for Hackathon</td>
+                                <td class="py-5 px-6 text-gray-300">Detailed problem statement for SRIT students
+                                    participating in the
+                                    hackathon</td>
+                                <td class="py-5 px-6 text-center"><span
+                                        class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">PDF</span>
+                                </td>
+                                <td class="py-5 px-6 text-center">
+                                    <a href="./assets/novateps.pdf" download
+                                        class="download-btn inline-flex items-center bg-blue-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
+                                        <i class="fas fa-download mr-2"></i> Download
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- <tr class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+<td class="py-5 px-6 font-semibold text-white">Registration Guidelines</td>
+                            <td class="py-5 px-6 text-gray-300">Step-by-step instructions for registering on KonfHub platform</td>
+                            <td class="py-5 px-6 text-center"><span
+                                    class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">PDF</span></td>
+                            <td class="py-5 px-6 text-center">
+                                <a href="./assets/registration-guidelines.pdf" download
+                                    class="download-btn inline-flex items-center bg-transparent text-[#38BDF8] border border-[#38BDF8] hover:bg-[#38BDF8] hover:text-[#060A14] shadow-[0_0_15px_rgba(56,189,248,0.2)] hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] px-4 py-2 rounded-lg font-medium transition">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </td>
+                        </tr> -->
+                            <!-- <tr class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+<td class="py-5 px-6 font-semibold text-white">Event Brochure</td>
+                            <td class="py-5 px-6 text-gray-300">Comprehensive brochure with event details, schedule, and important
+                                information</td>
+                            <td class="py-5 px-6 text-center"><span
+                                    class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">PDF</span></td>
+                            <td class="py-5 px-6 text-center">
+                                <a href="./assets/event-brochure.pdf" download
+                                    class="download-btn inline-flex items-center bg-blue-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr> -->
+                            <td class="py-5 px-6 font-semibold text-white">Parental Consent Undertaking Form Template
+                            </td>
+                            <td class="py-5 px-6 text-gray-300">Undertaking form for the Internal Hackathon Students
+                                (only for SRIT
+                                Participants)<br>Note: This is to be filled up by the parents only.</td>
+                            <td class="py-5 px-6 text-center"><span
+                                    class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">DOCX</span>
+                            </td>
+                            <td class="py-5 px-6 text-center">
+                                <a href="./assets/undertaking.docx" download
+                                    class="download-btn inline-flex items-center bg-transparent text-[#38BDF8] border border-[#38BDF8] hover:bg-[#38BDF8] hover:text-[#060A14] shadow-[0_0_15px_rgba(56,189,248,0.2)] hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] px-4 py-2 rounded-lg font-medium transition">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </td>
+                            </tr>
+                            <tr
+                                class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+                                <td class="py-5 px-6 font-semibold text-white">Presentation Template</td>
+                                <td class="py-5 px-6 text-gray-300">Sample and format requirements for final expo
+                                    presentations (both Expo
+                                    and Hackathon)</td>
+                                <td class="py-5 px-6 text-center"><span
+                                        class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">PPTX</span>
+                                </td>
+                                <td class="py-5 px-6 text-center">
+                                    <a href="./assets/novate-presentation-template.pptx" download
+                                        class="download-btn inline-flex items-center bg-transparent text-[#38BDF8] border border-[#38BDF8] hover:bg-[#38BDF8] hover:text-[#060A14] shadow-[0_0_15px_rgba(56,189,248,0.2)] hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] px-4 py-2 rounded-lg font-medium transition">
+                                        <i class="fas fa-download mr-2"></i> Download
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- <tr class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+<td class="py-5 px-6 font-semibold text-white">Judging Criteria</td>
+                            <td class="py-5 px-6 text-gray-300">Detailed rubric used by judges to evaluate projects</td>
+                            <td class="py-5 px-6 text-center"><span
+                                    class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">PDF</span></td>
+                            <td class="py-5 px-6 text-center">
+                                <a href="./assets/judging-criteria.pdf" download
+                                    class="download-btn inline-flex items-center bg-blue-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+<td class="py-5 px-6 font-semibold text-white">Travel & Accommodation Guide</td>
+                            <td class="py-5 px-6 text-gray-300">Information for outstation participants about travel and accommodation
+                                options</td>
+                            <td class="py-5 px-6 text-center"><span
+                                    class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">PDF</span></td>
+                            <td class="py-5 px-6 text-center">
+                                <a href="./assets/travel-accommodation.pdf" download
+                                    class="download-btn inline-flex items-center bg-blue-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(56,189,248,0.05)] transition-colors duration-300">
+<td class="py-5 px-6 font-semibold text-white">Certificate Templates</td>
+                            <td class="py-5 px-6 text-gray-300">Templates for certificates for winners and participants</td>
+                            <td class="py-5 px-6 text-center"><span
+                                    class="bg-[#1e3a8a] text-[#7dd3fc] border border-[#3b82f6]/30 px-3 py-1 rounded-full text-sm">ZIP</span></td>
+                            <td class="py-5 px-6 text-center">
+                                <a href="./assets/certificate-templates.zip" download
+                                    class="download-btn inline-flex items-center bg-blue-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
+                                    <i class="fas fa-download mr-2"></i> Download
+                                </a>
+                            </td>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div
+                    class="mt-12 bg-[#0d1633] border border-[rgba(255,255,255,0.05)] text-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-[#38BDF8] mb-4">Need Additional Resources?</h3>
+                    <p class="text-gray-200 mb-6">If you need any additional documents or have questions about the
+                        downloads, please contact our support team.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:asme@sritcbe.ac.in"
+                            class="inline-flex items-center justify-center bg-transparent relative z-10 text-[#38BDF8] border border-blue-800 px-6 py-3 rounded-lg font-medium hover:bg-[#0d1633] border border-[rgba(255,255,255,0.05)] text-white transition">
+                            <i class="fas fa-envelope mr-2"></i> Email Support
+                        </a>
+                        <a href="index.html#contact"
+                            class="inline-flex items-center justify-center bg-blue-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+                            <i class="fas fa-phone mr-2"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-blue-900 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-10 mb-10">
+                    <div>
+                        <div class="mb-5 flex space-x-4 justify-start">
+                            <img src="./assets/asmewhite.png" alt="ASME SRIT Logo" class="h-12">
+                            <img src="./assets/SRIT - New Logo File.png" alt="SRIT Logo" class="h-12">
+                        </div>
+                        <h3 class="text-xl font-bold mb-5">About ASME SRIT</h3>
+                        <p class="text-blue-200">The ASME Student Section at Sri Ramakrishna Institute of Technology
+                            provides students
+                            with opportunities for professional development, technical growth, and leadership experience
+                            through innovative programs and events.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-5">Quick Links</h3>
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="text-blue-200 hover:text-white transition">Home</a></li>
+                            <li><a href="index.html#about" class="text-blue-200 hover:text-white transition">About</a>
+                            </li>
+                            <li><a href="index.html#events" class="text-blue-200 hover:text-white transition">Events</a>
+                            </li>
+                            <li><a href="index.html#gallery"
+                                    class="text-blue-200 hover:text-white transition">Gallery</a>
+                            </li>
+                            <li><a href="index.html#achievements"
+                                    class="text-blue-200 hover:text-white transition">Achievements</a>
+                            </li>
+                            <li><a href="index.htmldownloads.html"
+                                    class="text-blue-200 hover:text-white transition">Downloads</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-5">Global ASME Competitions</h3>
+                        <ul class="space-y-3">
+                            <li><a href="https://efests.asme.org/competitions/asme-extended-reality-challenge"
+                                    class="text-blue-200 hover:text-white transition">ASME Extended Reality Challenge
+                                    (XRC):
+                                    Autonomous Vehicles</a></li>
+                            <li><a href="https://efests.asme.org/competitions/human-powered-vehicle-challenge-(hpvc)"
+                                    class="text-blue-200 hover:text-white transition">ASME e-Human Powered Vehicle
+                                    Challenge
+                                    (e-HPVC)</a></li>
+                            <li><a href="https://efests.asme.org/competitions/student-design-competition-(sdc)"
+                                    class="text-blue-200 hover:text-white transition">ASME Student Design Competition
+                                    (SDC)</a></li>
+                            <li><a href="https://efests.asme.org/competitions/asme-innovative-additive-manufacturing-3d-challeng"
+                                    class="text-blue-200 hover:text-white transition">ASME Innovative Additive
+                                    Manufacturing
+                                    3D Challenge (IAM3D®)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div>
+                <h3 class="text-xl font-bold mb-5">Stay Updated</h3>
+                <p class="text-blue-200 mb-5">Subscribe to our newsletter for the latest updates on events,
+                    workshops, and opportunities.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email address"
+                        class="px-4 py-3 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                    <button class="bg-blue-800 px-4 py-3 rounded-r-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div> -->
+                </div>
+
+                <!-- Social icons row -->
+                <div class="pt-8 border-t border-blue-800 flex justify-center space-x-5">
+                    <a href="https://www.instagram.com/asme_srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/asme-srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <!-- Separate bottom copyright & dev line -->
+                <div class="pt-6 text-center">
+                    <p class="text-blue-200 text-sm">
+                        © <span id="currentYear"></span> ASME SRIT Student Section. All rights reserved.
+                    </p>
+                    <p class="text-blue-300 text-sm mt-2">
+                        Developed with ❤️ by
+                        <a href="https://www.linkedin.com/in/alan-s-9385a328a" target="_blank"
+                            class="underline hover:text-white">
+                            Alan S.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Set current year in footer
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Loading screen
+            window.addEventListener("load", function () {
+                const loader = document.getElementById("loader");
+                setTimeout(() => {
+                    loader.style.opacity = "0";
+                    loader.style.transition = "opacity 0.5s ease";
+                    setTimeout(() => loader.style.display = "none", 500);
+                }, 1000); // 1 second delay
+            });
+        </script>
+
+    </div>
+
+    <script src="./assets/scripts/main.js"></script>
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('active');
+                menu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>

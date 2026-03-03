@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASME TN-NOVATE SDG Innovation Expo 2025 | ASME SRIT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="/tnnovate-site/assets/images/asmewhite.png">
+    <meta name="theme-color" content="#1D4ED8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-navbutton-color" content="#1D4ED8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    height: {
+                        'screen-90': '90vh',
+                        'screen-80': '80vh',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Fonts & Animations */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            display: block;
+        }
+
+        /* Hover Lift Effect */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Fade-in Animation */
+        .section-fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 94, 184, 0.9), rgba(29, 78, 216, 0.8)),
+                url('/tnnovate-site/assets/images/srit-hero.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Glow Effects */
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        /* SDG Grid & Cards */
+        .sdg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .sdg-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sdg-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 94, 184, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sdg-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 94, 184, 0.15);
+            border-color: #005EB8;
+            z-index: 10;
+        }
+
+        .sdg-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Committee Card */
+        .committee-card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .committee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Timeline Enchancements */
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ... existing timeline styles but can be overridden/simplified via Tailwind in HTML ... */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #bfdbfe;
+            /* lighter blue line */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: white;
+            border: 6px solid #005EB8;
+            border-radius: 50%;
+            top: 20px;
+            right: -12px;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::after {
+            background-color: #005EB8;
+            transform: scale(1.2);
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 24px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 5px solid #005EB8;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                left: 0 !important;
+            }
+
+            .timeline-item::after {
+                left: 19px;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: 19px;
+            }
+        }
+
+        /* Marquee Animation */
+        @keyframes marqueeScroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marqueeScroll 22s linear infinite;
+            display: flex;
+            width: fit-content;
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-button.active i {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .srit-logo {
+                display: block !important;
+                margin: 15px auto 0 auto !important;
+                max-width: 120px !important;
+            }
+
+            .logo-row,
+            .logos,
+            .header-logos {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <span class="text-blue-800 font-bold text-2xl">ASME SRIT</span>
+    </div>
+
+    <!-- Header/Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all duration-300" id="navbar">
+        <nav class="w-full px-6 md:px-12 lg:px-20 py-3 flex justify-between items-center">
+            <a href="/tnnovate-site/" class="flex items-center group">
+                <img src="/tnnovate-site/assets/images/asmewhite.png" alt="ASME Logo"
+                    class="h-10 md:h-12 group-hover:scale-105 transition-transform">
+                <div class="ml-3 flex flex-col">
+                    <span class="text-lg md:text-xl font-bold text-blue-900 leading-tight">TN-NOVATE</span>
+                    <span class="text-xs text-blue-600 font-medium">Innovation Expo 2025</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="#hero"
+                    class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    Home
+                    <span
+                        class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#about-tnnovate"
+                    class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    About
+                    <span
+                        class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#why-participate"
+                    class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    Why Join?
+                    <span
+                        class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#sdg-themes"
+                    class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    Themes
+                    <span
+                        class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#timeline"
+                    class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    Roadmap
+                    <span
+                        class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <!-- <a href="#committee" class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    Team
+                    <span class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a> -->
+                <a href="#faq"
+                    class="nav-link text-gray-600 hover:text-blue-800 font-medium text-sm transition-colors relative group">
+                    FAQ
+                    <span
+                        class="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#register"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-bold text-sm transition-all hover:shadow-lg transform hover:-translate-y-0.5">
+                    Register
+                </a>
+            </div>
+
+            <button class="md:hidden text-blue-800 focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+                <a href="#hero"
+                    class="block px-3 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 rounded-lg font-medium">Home</a>
+                <a href="#about-tnnovate"
+                    class="block px-3 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 rounded-lg font-medium">About</a>
+                <a href="#why-participate"
+                    class="block px-3 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 rounded-lg font-medium">Why
+                    Join?</a>
+                <a href="#sdg-themes"
+                    class="block px-3 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 rounded-lg font-medium">Themes</a>
+                <a href="#timeline"
+                    class="block px-3 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 rounded-lg font-medium">Timeline</a>
+                <a href="#register"
+                    class="block px-3 py-3 text-white bg-blue-600 rounded-lg font-bold text-center mt-2">Register
+                    Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🔹 Marquee Section (Full Width + Sticky) -->
+
+    <div class="w-full bg-blue-700 text-white sticky top-[72px] z-40 relative overflow-hidden">
+        <div class="flex whitespace-nowrap animate-marquee py-2">
+            <div class="flex items-center gap-10 px-6">
+                <span class="font-semibold">ASME SRIT — TN-NOVATE Registration is OPEN!</span>
+                <a href="https://konfhub.com/tnnovate2" class="underline font-bold">Click here to Register → TN-NOVATE
+                    Registration</a>
+                <span>Hurry up! Limited slots available 🚀</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="flex items-center gap-10 px-6">
+                <span class="font-semibold">ASME SRIT — TN-NOVATE Registration is OPEN!</span>
+                <a href="https://konfhub.com/tnnovate2" class="underline font-bold">Click here to Register → TN-NOVATE
+                    Registration</a>
+                <span>Hurry up! Limited slots available 🚀</span>
+            </div>
+            <!-- Duplicate for seamless loop (Safety) -->
+            <div class="flex items-center gap-10 px-6">
+                <span class="font-semibold">ASME SRIT — TN-NOVATE Registration is OPEN!</span>
+                <a href="https://konfhub.com/tnnovate2" class="underline font-bold">Click here to Register → TN-NOVATE
+                    Registration</a>
+                <span>Hurry up! Limited slots available 🚀</span>
+            </div>
+        </div>
+    </div>
+    <!-- 🔹 End Marquee -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg text-white min-h-[85vh] flex items-center w-full relative overflow-hidden">
+        <!-- Background Circles -->
+        <div class="glow-circle w-96 h-96 bg-blue-400 -top-20 -left-20"></div>
+        <div class="glow-circle w-80 h-80 bg-cyan-400 bottom-0 right-0"></div>
+
+        <div class="w-full px-6 md:px-12 lg:px-20 text-center z-10 relative pt-10">
+            <!-- Animated Logos -->
+            <div class="flex justify-center mb-8 gap-6 logo-row items-center section-fade visible flex-wrap">
+                <!-- ASME TN -->
+                <div class="bg-white/90 p-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="/tnnovate-site/assets/images/asme-tn.png" alt="ASME TN Logo"
+                        class="h-14 md:h-16 animate-fade-in-down">
+                </div>
+                <!-- ASME SRIT -->
+                <div
+                    class="bg-white/90 p-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animation-delay-200">
+                    <img src="/tnnovate-site/assets/images/asmewhite.png" alt="ASME SRIT Logo"
+                        class="h-14 md:h-16 animate-fade-in-down">
+                </div>
+                <!-- SRIT -->
+                <div
+                    class="bg-white/90 p-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animation-delay-400">
+                    <img src="/tnnovate-site/assets/images/SRIT - New Logo File.png" alt="SRIT Logo"
+                        class="h-14 md:h-16 animate-fade-in-down">
+                </div>
+            </div>
+
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-blue-500/30 border border-blue-400/50 text-blue-100 text-sm font-semibold mb-6 tracking-wide backdrop-blur-sm animate-pulse">
+                🚀 State Level Innovation Challenge
+            </span>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight leading-tight section-fade visible"
+                style="text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                TN-NOVATE <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">2025</span>
+            </h1>
+
+            <h2 class="text-2xl md:text-3xl font-light mb-8 text-blue-100 tracking-wider section-fade visible">
+                ASME SDG Innovation Expo
+            </h2>
+
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-blue-50/90 section-fade visible">
+                Join the most prestigious innovation summit converging engineering brilliance with United Nations
+                Sustainable Development Goals.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-5 mb-16 section-fade visible">
+                <a href="#register"
+                    class="group bg-white text-blue-900 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all text-lg shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_30px_rgba(255,255,255,0.3)] transform hover:-translate-y-1 items-center flex justify-center">
+                    <span class="mr-2">Register Now</span>
+                    <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#about-tnnovate"
+                    class="border-2 border-white/70 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 hover:border-white transition-all text-lg backdrop-blur-sm">
+                    Explore the Event
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-white/20 pt-8 mt-8 section-fade visible">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-cyan-300">17</div>
+                    <div class="text-xs text-blue-100 uppercase tracking-widest mt-1">SDG Goals</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-cyan-300">50+</div>
+                    <div class="text-xs text-blue-100 uppercase tracking-widest mt-1">Colleges</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-cyan-300">₹20k+</div>
+                    <div class="text-xs text-blue-100 uppercase tracking-widest mt-1">Prize Pool</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-cyan-300">State</div>
+                    <div class="text-xs text-blue-100 uppercase tracking-widest mt-1">Level Expo</div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <a href="#about-tnnovate"
+                class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70 hover:text-white transition-colors">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-tnnovate" class="py-24 bg-white section-fade">
+        <div class="w-full px-6 md:px-12 lg:px-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Content -->
+                <div>
+                    <span class="text-blue-600 font-bold tracking-wider text-sm uppercase mb-2 block">The Mission</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Innovation for a <br><span class="text-blue-800">Sustainable Future</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        TN-NOVATE 2025 is more than just an expo; it is a movement. We are bringing together the
+                        brightest young minds from across India to engineer solutions for the United Nations Sustainable
+                        Development Goals.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-leaf text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">100% SDG Aligned</h4>
+                                <p class="text-sm text-gray-500">Every project targets specific global goals.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-lightbulb text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Engineering Meets Impact</h4>
+                                <p class="text-sm text-gray-500">Bridging technical feasibility with social good.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Card -->
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur-lg opacity-30 animate-pulse">
+                    </div>
+                    <div
+                        class="relative bg-gradient-to-br from-blue-900 to-blue-800 p-8 rounded-2xl text-white shadow-2xl hover:scale-[1.02] transition-transform duration-500">
+                        <div class="flex justify-between items-start mb-8">
+                            <i class="fas fa-quote-left text-4xl text-blue-400 opacity-50"></i>
+                            <div
+                                class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                <i class="fas fa-rocket text-2xl text-yellow-300"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">"We are not just building projects; we are building the
+                            future."</h3>
+                        <p class="text-blue-100 mb-8">Join a community of changemakers who believe that engineering can
+                            solve the world's toughest challenges.</p>
+
+                        <div class="flex items-center space-x-4 pt-6 border-t border-white/10">
+                            <div>
+                                <div class="text-3xl font-bold text-white">Oct 14</div>
+                                <div class="text-xs text-blue-300 uppercase">Expo Date</div>
+                            </div>
+                            <div class="h-8 w-px bg-white/20"></div>
+                            <div>
+                                <div class="text-3xl font-bold text-white">SRIT</div>
+                                <div class="text-xs text-blue-300 uppercase">Venue</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏆 Two Tracks Section (NEW) -->
+    <section id="tracks" class="py-24 bg-gray-50 section-fade">
+        <div class="w-full px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-bold tracking-wider text-sm uppercase mb-2 block">Choose Your
+                    Path</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-blue-900 mb-6">🏆 Two Tracks at TN-NOVATE</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Track 1: Expo -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover-lift relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 bg-cyan-100 w-32 h-32 rounded-bl-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform">
+                    </div>
+                    <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-lightbulb text-3xl text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">SDG Innovation Expo</h3>
+                    <p class="text-cyan-600 font-medium mb-6">Open to All Engineering Students</p>
+
+                    <ul class="space-y-4 mb-8 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                            <span>Showcase working SDG-based projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                            <span>National participation open to all colleges</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                            <span><b>Expo Day:</b> October 14, 2025</span>
+                        </li>
+                    </ul>
+                    <a href="#register"
+                        class="block w-full py-4 rounded-xl text-center font-bold bg-cyan-50 text-cyan-700 hover:bg-cyan-600 hover:text-white transition-colors">
+                        Register for Expo &rarr;
+                    </a>
+                </div>
+
+                <!-- Track 2: Hackathon -->
+                <div
+                    class="bg-blue-900 rounded-3xl p-8 shadow-xl border border-blue-800 hover-lift relative overflow-hidden group text-white">
+                    <div
+                        class="absolute top-0 right-0 bg-blue-700 w-32 h-32 rounded-bl-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform">
+                    </div>
+                    <div class="w-16 h-16 bg-blue-800 rounded-2xl flex items-center justify-center mb-6 relative z-10">
+                        <i class="fas fa-laptop-code text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Internal Hackathon</h3>
+                    <p class="text-blue-200 font-medium mb-6">Exclusive for SRIT Students</p>
+
+                    <ul class="space-y-4 mb-8 text-blue-100">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>Based on official SDG problem statements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>Team size: 3 members</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>Pre-hackathon mentorship & workshops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-code-branch text-yellow-400 mt-1 mr-3"></i>
+                            <span>Uses Git/GitHub for version control</span>
+                        </li>
+                    </ul>
+                    <a href="#problems"
+                        class="block w-full py-4 rounded-xl text-center font-bold bg-blue-600 text-white hover:bg-white hover:text-blue-900 transition-colors">
+                        View Problem Statements &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Why Participate Section (NEW) -->
+        <section id="why-participate" class="py-24 bg-blue-50 section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Why Participate?</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                        <div
+                            class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                            <i
+                                class="fas fa-globe-asia text-2xl text-blue-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Innovate for Impact 🌍</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Don't just build for grades. Build for the world. Showcase how your engineering skills can
+                            solve
+                            real-world problems aligned with the UN SDGs.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                        <div
+                            class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
+                            <i
+                                class="fas fa-handshake text-2xl text-indigo-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Collaborate & Compete 🤝</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Connect with like-minded innovators from top institutions. Compete in a high-energy
+                            environment
+                            and refine your ideas with expert feedback.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover-lift group">
+                        <div
+                            class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                            <i
+                                class="fas fa-trophy text-2xl text-amber-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Recognition & Opportunities 🏆</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Win cash prizes worth ₹20k+, get recognized by ASME, and add a prestigious state-level
+                            achievement to your professional portfolio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="mb-16">
+            <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-8 text-center">Sustainable Development Goals
+                (SDGs)</h3>
+            <p class="text-gray-700 max-w-4xl mx-auto text-center">The Sustainable Development Goals (SDGs), also
+                known as the Global Goals, were adopted by all United Nations Member States in 2015 as a universal
+                call to action to end poverty, protect the planet, and ensure that all people enjoy peace and
+                prosperity by 2030. The 17 SDGs are integrated—they recognize that action in one area will affect
+                outcomes in others, and that development must balance social, economic, and environmental
+                sustainability.</p>
+            <img src="/tnnovate-site/assets/images/sdg.png" alt="SDG Goals" class="mt-8 mx-auto max-w-full h-auto">
+        </div>
+
+        <!-- 🌍 SDG Problem Statements Section -->
+        <section id="problems" class="py-24 bg-white section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-4 tracking-wide uppercase">Official
+                        Domains</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Hackathon Problem Domains</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Choose from <span class="font-bold text-blue-800">17 Software</span> and <span
+                            class="font-bold text-blue-800">3 Hardware</span> problem statements defined by real-world
+                        needs.
+                    </p>
+                </div>
+
+                <!-- Problem Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- PS 1 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-blue-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">SDG 1</span>
+                            <i class="fas fa-code text-gray-300 group-hover:text-blue-500 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">No Poverty</h4>
+                        <p class="text-blue-800 font-medium text-sm">AI-Based Smart Allocation Engine</p>
+                    </div>
+
+                    <!-- PS 2 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-yellow-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">SDG 2</span>
+                            <i class="fas fa-leaf text-gray-300 group-hover:text-yellow-500 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Zero Hunger</h4>
+                        <p class="text-blue-800 font-medium text-sm">Smart Crop Advisory System</p>
+                    </div>
+
+                    <!-- PS 3 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-green-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">SDG 3</span>
+                            <i class="fas fa-heartbeat text-gray-300 group-hover:text-green-500 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Good Health</h4>
+                        <p class="text-blue-800 font-medium text-sm">Smart Health Monitoring System</p>
+                    </div>
+
+                    <!-- PS 4 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-red-600">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">SDG 4</span>
+                            <i
+                                class="fas fa-graduation-cap text-gray-300 group-hover:text-red-600 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Quality Education</h4>
+                        <p class="text-blue-800 font-medium text-sm">Digital Learning Platform</p>
+                    </div>
+
+                    <!-- PS 6 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-cyan-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-cyan-500 text-white text-xs font-bold px-2 py-1 rounded">SDG 6</span>
+                            <i class="fas fa-water text-gray-300 group-hover:text-cyan-500 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Clean Water</h4>
+                        <p class="text-blue-800 font-medium text-sm">Rainwater Harvesting Assessment App</p>
+                    </div>
+
+                    <!-- PS 7 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-yellow-400">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-yellow-400 text-white text-xs font-bold px-2 py-1 rounded">SDG 7</span>
+                            <i
+                                class="fas fa-solar-panel text-gray-300 group-hover:text-yellow-400 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Clean Energy</h4>
+                        <p class="text-blue-800 font-medium text-sm">Renewable Energy Monitoring System</p>
+                    </div>
+
+                    <!-- PS 9 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-orange-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">SDG 9</span>
+                            <i class="fas fa-industry text-gray-300 group-hover:text-orange-500 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Industry & Innovation</h4>
+                        <p class="text-blue-800 font-medium text-sm">AI-based QR Code Marking for Railways</p>
+                    </div>
+
+                    <!-- PS 11 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-orange-400">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-orange-400 text-white text-xs font-bold px-2 py-1 rounded">SDG 11</span>
+                            <i class="fas fa-bus text-gray-300 group-hover:text-orange-400 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Sustainable Cities</h4>
+                        <p class="text-blue-800 font-medium text-sm">Public Transport Tracking System</p>
+                    </div>
+
+                    <!-- PS 13 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-green-700">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-green-700 text-white text-xs font-bold px-2 py-1 rounded">SDG 13</span>
+                            <i class="fas fa-leaf text-gray-300 group-hover:text-green-700 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Climate Action</h4>
+                        <p class="text-blue-800 font-medium text-sm">Blockchain Blue Carbon Registry</p>
+                    </div>
+
+                    <!-- PS 15 -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all group hover:border-green-600">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">SDG 15</span>
+                            <i class="fas fa-tree text-gray-300 group-hover:text-green-600 transition-colors"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Life on Land</h4>
+                        <p class="text-blue-800 font-medium text-sm">Biodiversity Analysis using eDNA</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="/tnnovate-site/assets/files/novateps.pdf" target="_blank"
+                        class="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-bold rounded-full hover:bg-black transition-all hover:scale-105 shadow-lg">
+                        <i class="fas fa-file-pdf mr-2"></i> Download Full Problem Statement PDF
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🧠 Evaluation Criteria Section -->
+        <section class="py-24 bg-blue-50 section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Evaluation Criteria</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
+                    <div
+                        class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all border-b-4 border-blue-500">
+                        <div class="text-3xl font-extrabold text-blue-600 mb-2">25%</div>
+                        <h4 class="font-bold text-gray-800 text-sm">Innovation & Creativity</h4>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all border-b-4 border-cyan-500">
+                        <div class="text-3xl font-extrabold text-cyan-600 mb-2">25%</div>
+                        <h4 class="font-bold text-gray-800 text-sm">Technical Excellence</h4>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all border-b-4 border-green-500">
+                        <div class="text-3xl font-extrabold text-green-600 mb-2">20%</div>
+                        <h4 class="font-bold text-gray-800 text-sm">Impact & Feasibility</h4>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all border-b-4 border-purple-500">
+                        <div class="text-3xl font-extrabold text-purple-600 mb-2">15%</div>
+                        <h4 class="font-bold text-gray-800 text-sm">User Experience</h4>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all border-b-4 border-orange-500">
+                        <div class="text-3xl font-extrabold text-orange-600 mb-2">15%</div>
+                        <h4 class="font-bold text-gray-800 text-sm">Presentation</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 👥 Team & Submission Rules -->
+        <section class="py-24 bg-white section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20 max-w-6xl mx-auto">
+                <div class="bg-blue-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-800 w-64 h-64 rounded-full -mr-20 -mt-20 opacity-50">
+                    </div>
+                    <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6">Hackathon Rules & Guidelines</h2>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="bg-blue-700 p-2 rounded-lg mr-4 mt-1"><i
+                                            class="fas fa-users text-yellow-400"></i></span>
+                                    <div>
+                                        <strong class="block text-lg">Team Composition</strong>
+                                        <span class="text-blue-200 text-sm">Max 3 members per team. Must be enrolled
+                                            students.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-700 p-2 rounded-lg mr-4 mt-1"><i
+                                            class="fas fa-code-branch text-yellow-400"></i></span>
+                                    <div>
+                                        <strong class="block text-lg">Version Control</strong>
+                                        <span class="text-blue-200 text-sm">Git/GitHub usage is mandatory for code
+                                            submission.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-700 p-2 rounded-lg mr-4 mt-1"><i
+                                            class="fas fa-laptop text-yellow-400"></i></span>
+                                    <div>
+                                        <strong class="block text-lg">The Demo</strong>
+                                        <span class="text-blue-200 text-sm">10-minute presentation + live demo
+                                            required.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-800/50 p-6 rounded-2xl border border-blue-700">
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><i
+                                    class="fas fa-gift text-yellow-400 mr-2"></i> Resources Provided</h3>
+                            <ul class="space-y-3 text-sm text-blue-100">
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Faculty
+                                    Mentorship</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Technical
+                                    Environment Support</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Access to
+                                    Relevant Datasets</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Pre-Event
+                                    Workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Journey (Timeline) -->
+        <section id="timeline" class="py-24 bg-blue-50 section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">TN-NOVATE Journey</h2>
+                    <p class="text-gray-600">Your path from idea to innovation impact</p>
+                </div>
+
+                <!-- Dual Timeline -->
+                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Hackathon Timeline -->
+                    <div>
+                        <h3
+                            class="text-2xl font-bold text-blue-900 mb-8 border-b-2 border-blue-200 pb-2 flex items-center">
+                            <i class="fas fa-laptop-code text-yellow-500 mr-3"></i> Hackathon Timeline
+                        </h3>
+                        <div class="space-y-6 relative border-l-2 border-blue-200 ml-3 pl-8">
+                            <!-- Step 1 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-blue-50">1</span>
+                                <h4 class="font-bold text-gray-900">Registration Opens</h4>
+                                <p class="text-sm text-gray-600">Sept 1 - Oct 10</p>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-blue-50">2</span>
+                                <h4 class="font-bold text-gray-900">Problem Selection</h4>
+                                <p class="text-sm text-gray-600">Choose from 17+ Goals</p>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-blue-50">3</span>
+                                <h4 class="font-bold text-gray-900">Hackathon Days</h4>
+                                <p class="text-sm text-gray-600">Oct 12 - 13 (24 Hours)</p>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-yellow-400 text-blue-900 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-blue-50">4</span>
+                                <h4 class="font-bold text-gray-900">Final Demo</h4>
+                                <p class="text-sm text-gray-600">Oct 14 (Expo Day)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expo Timeline -->
+                    <div>
+                        <h3
+                            class="text-2xl font-bold text-cyan-700 mb-8 border-b-2 border-cyan-200 pb-2 flex items-center">
+                            <i class="fas fa-lightbulb text-cyan-500 mr-3"></i> Expo Timeline
+                        </h3>
+                        <div class="space-y-6 relative border-l-2 border-cyan-200 ml-3 pl-8">
+                            <!-- Step 1 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-cyan-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-cyan-50">1</span>
+                                <h4 class="font-bold text-gray-900">Registration Window</h4>
+                                <p class="text-sm text-gray-600">Open until Oct 10</p>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-cyan-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-cyan-50">2</span>
+                                <h4 class="font-bold text-gray-900">Submission of Abstract</h4>
+                                <p class="text-sm text-gray-600">Submit project overview</p>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[41px] bg-yellow-400 text-cyan-900 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ring-4 ring-cyan-50">3</span>
+                                <h4 class="font-bold text-gray-900">Grand Expo Day</h4>
+                                <p class="text-sm text-gray-600">October 14, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration CTA Section (High Impact) -->
+        <section id="register" class="py-24 relative overflow-hidden section-fade">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 z-0"></div>
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20">
+            </div>
+
+            <div class="w-full px-6 md:px-12 lg:px-20 relative z-10 text-center">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                    Ready to <span class="text-yellow-400">Innovate?</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto font-light">
+                    Join the premier SDG Innovation Expo or Challenge yourself in the Hackathon.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <!-- Register for Expo Button -->
+                    <a href="https://konfhub.com/tnnovate2" target="_blank" class="group relative">
+                        <span
+                            class="absolute inset-0 bg-yellow-400 rounded-full blur-md opacity-50 group-hover:opacity-100 transition-opacity"></span>
+                        <span
+                            class="relative bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-xl shadow-xl flex items-center hover:scale-105 transition-transform">
+                            Register for Expo
+                            <i class="fas fa-external-link-alt ml-3"></i>
+                        </span>
+                    </a>
+
+                    <!-- Download Problem Statements Button -->
+                    <a href="/tnnovate-site/assets/files/novateps.pdf" target="_blank"
+                        class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-blue-900 transition-colors flex items-center">
+                        <i class="fas fa-file-download mr-3"></i>
+                        Download Problem Statements
+                    </a>
+                </div>
+
+                <div class="mt-8 text-blue-200 text-sm font-medium tracking-wider uppercase animate-pulse">
+                    <i class="fas fa-clock mr-1"></i> Registration closes October 10
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16 text-left">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10">
+                        <div class="text-2xl font-bold text-yellow-400 mb-1">₹300</div>
+                        <div class="text-blue-100 text-sm">Per Student Registration Fee</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10">
+                        <div class="text-2xl font-bold text-yellow-400 mb-1">1-3</div>
+                        <div class="text-blue-100 text-sm">Members Per Team</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10">
+                        <div class="text-2xl font-bold text-yellow-400 mb-1">Open</div>
+                        <div class="text-blue-100 text-sm">To All Engineering Branches</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizing Committee -->
+        <section id="committee" class="py-24 bg-white section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Organizing Committee</h2>
+                    <p class="text-gray-600">The team driving innovation forward</p>
+                </div>
+
+                <!-- Advisory Committee -->
+                <div class="mb-16">
+                    <!-- <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-8 text-center flex items-center justify-center">
+                    <span class="w-12 h-px bg-blue-200 mr-4"></span>
+                    Advisory Board
+                    <span class="w-12 h-px bg-blue-200 ml-4"></span>
+                </h3> -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div
+                            class="committee-card bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center hover:bg-white">
+                            <div
+                                class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user-tie text-4xl text-blue-300"></i>
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-900 mb-1">Thiru. R. Sundar</h4>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mb-3 font-semibold">Managing
+                                Trustee</span>
+                            <p class="text-gray-500 text-sm">SNR Sons Charitable Trust, Coimbatore</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center hover:bg-white">
+                            <div
+                                class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user-tie text-4xl text-blue-300"></i>
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-900 mb-1">Dr. Venkatesh Babu</h4>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mb-3 font-semibold">Chair
+                                ASME TN</span>
+                            <p class="text-gray-500 text-sm">Pro Vice-Chancellor, Bharath University</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center hover:bg-white">
+                            <div
+                                class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user-tie text-4xl text-blue-300"></i>
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-900 mb-1">Mr. N. Prakash</h4>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mb-3 font-semibold">Vice-Chair
+                                ASME TN</span>
+                            <p class="text-gray-500 text-sm">CEO & Director, Vahyu Techno Engineers</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center hover:bg-white">
+                            <div
+                                class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user-tie text-4xl text-blue-300"></i>
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-900 mb-1">Dr. J. David Rathnaraj</h4>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mb-3 font-semibold">Principal</span>
+                            <p class="text-gray-500 text-sm">Sri Ramakrishna Institute of Technology</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center hover:bg-white">
+                            <div
+                                class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user-tie text-4xl text-blue-300"></i>
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-900 mb-1">Mr. N. Venkadesan</h4>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full mb-3 font-semibold">Secretary
+                                ASME TN</span>
+                            <p class="text-gray-500 text-sm">Manager-Inspection, CEIL</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center hover:bg-white">
+                            <div
+                                class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-user-tie text-4xl text-blue-300"></i>
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-900 mb-1">Dr. S. Christopher</h4>
+                            <span
+                                class="inline-block bg-cyan-100 text-cyan-800 text-xs px-3 py-1 rounded-full mb-3 font-semibold">Technical
+                                Advisor</span>
+                            <p class="text-gray-500 text-sm">Scientist, National Institute of Ocean Technology</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institutional Steering Committee -->
+                <div>
+                    <h3
+                        class="text-2xl md:text-3xl font-bold text-blue-800 mb-12 text-center flex items-center justify-center">
+                        <span class="w-12 h-px bg-blue-200 mr-4"></span>
+                        Institutional Steering Committee
+                        <span class="w-12 h-px bg-blue-200 ml-4"></span>
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Faculty Card Template -->
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">RI</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Mr. R. Immanual</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor (Sr. Gr.)</p>
+                            <p class="text-xs text-gray-500">Mechanical Engineering</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">NS</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Ms. N. Sanjana</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">CSE</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">JS</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Ms. J. Sangeetha Saral</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">Information Technology</p>
+                        </div>
+
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">DP</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Ms. D. Poornima</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor (Sl. Gr.)</p>
+                            <p class="text-xs text-gray-500">EEE</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">SD</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Ms. S. Dhivya</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">ECE</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">VC</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Dr. V. Chitra</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Professor & Head</p>
+                            <p class="text-xs text-gray-500">Science & Humanities</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">RS</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Mr. R. Sudharshan</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">Mechanical Engineering</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">KM</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Mr. K. Moorthy</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">Information Technology</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">DS</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Ms. D. Sharmila</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">ECE</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">AM</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Ms. A. Monisha</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">CSE</p>
+                        </div>
+                        <div
+                            class="committee-card bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg text-center group">
+                            <div
+                                class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
+                                <span class="text-xl font-bold text-gray-400 group-hover:text-blue-600">PK</span>
+                            </div>
+                            <h4 class="font-bold text-blue-900">Mr. P. Karthikeyan</h4>
+                            <p class="text-xs text-blue-600 font-semibold mb-1">Assistant Professor</p>
+                            <p class="text-xs text-gray-500">Tamil, S&H</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (New) -->
+        <section id="faq" class="py-24 bg-blue-50 section-fade">
+            <div class="w-full px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600">Everything you need to know about TN-NOVATE</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Question 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-blue-100 overflow-hidden">
+                        <button
+                            class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-bold text-lg text-blue-900">Who can participate in Expo vs
+                                Hackathon?</span>
+                            <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content bg-blue-50/50">
+                            <div class="p-6 pt-0 text-gray-600">
+                                <ul class="list-disc pl-5">
+                                    <li><strong>Expo:</strong> Open to ALL engineering students from any college
+                                        (National Level).</li>
+                                    <li><strong>Hackathon:</strong> Exclusive to <strong>SRIT students</strong> only
+                                        (Internal).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-blue-100 overflow-hidden">
+                        <button
+                            class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-bold text-lg text-blue-900">What is the team size?</span>
+                            <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content bg-blue-50/50">
+                            <div class="p-6 pt-0 text-gray-600">
+                                Teams must have <strong>1 to 3 members</strong>. All members must be currently enrolled
+                                students.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-blue-100 overflow-hidden">
+                        <button
+                            class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-bold text-lg text-blue-900">Can cross-college teams join the Expo?</span>
+                            <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content bg-blue-50/50">
+                            <div class="p-6 pt-0 text-gray-600">
+                                Yes! We encourage cross-college and cross-department collaboration for the Expo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-blue-100 overflow-hidden">
+                        <button
+                            class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-bold text-lg text-blue-900">Do we need a working prototype?</span>
+                            <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content bg-blue-50/50">
+                            <div class="p-6 pt-0 text-gray-600">
+                                For the <strong>Expo</strong>, a working prototype or proof-of-concept is highly
+                                recommended and carries significant weight in scoring. For the Hackathon, you will build
+                                your prototype during the event.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-blue-100 overflow-hidden">
+                        <button
+                            class="faq-button w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-bold text-lg text-blue-900">Is prior ASME membership required?</span>
+                            <i class="fas fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content bg-blue-50/50">
+                            <div class="p-6 pt-0 text-gray-600">
+                                No, ASME membership is <strong>not required</strong> to participate. However, ASME
+                                members may receive special benefits.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-24 bg-white mb-0">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-16">Contact Us</h2>
+
+                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <div class="bg-blue-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-600">+91 9677817992<br>+91 9361292544</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600">asme@sritcbe.ac.in</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-globe text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Website</h4>
+                                    <a href="https://asmesrit.org" class="text-gray-600">asmesrit.org</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Venue Address</h3>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-blue-800"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">
+                                    Sri Ramakrishna Institute of Technology<br>
+                                    Perur Chettipalayam, Pachapalayam<br>
+                                    Coimbatore - 641010, Tamil Nadu, India
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <!-- Footer -->
+        <footer class="bg-blue-900 text-white pt-10 pb-2 mt-0 mb-0">
+            <div class="w-full px-6 md:px-12 lg:px-20">
+                <div class="grid md:grid-cols-4 gap-10 mb-8">
+                    <div>
+                        <div class="mb-5 flex space-x-4 justify-start items-center">
+                            <div
+                                class="bg-white/10 p-2 rounded-lg backdrop-blur-sm shadow-sm hover:bg-white/20 transition-colors">
+                                <img src="/tnnovate-site/assets/images/asmewhite.png" alt="ASME SRIT Logo" class="h-10">
+                            </div>
+                            <div
+                                class="bg-white/10 p-2 rounded-lg backdrop-blur-sm shadow-sm hover:bg-white/20 transition-colors">
+                                <img src="/tnnovate-site/assets/images/SRIT - New Logo File.png" alt="SRIT Logo"
+                                    class="h-10">
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">About ASME SRIT</h3>
+                        <p class="text-blue-200 text-sm leading-relaxed">The ASME Student Section at Sri Ramakrishna
+                            Institute of Technology
+                            provides students
+                            with opportunities for professional development, technical growth, and leadership
+                            experience.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2 text-sm text-blue-200">
+                            <li><a href="#hero" class="hover:text-white transition flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                            <li><a href="#about-tnnovate" class="hover:text-white transition flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2"></i> About</a></li>
+                            <li><a href="#tracks" class="hover:text-white transition flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2"></i> Tracks</a></li>
+                            <li><a href="#timeline" class="hover:text-white transition flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2"></i> Roadmap</a></li>
+                            <li><a href="#register" class="hover:text-white transition flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2"></i> Register</a></li>
+                            <li><a href="#faq" class="hover:text-white transition flex items-center"><i
+                                        class="fas fa-chevron-right text-xs mr-2"></i> FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Our Network</h3>
+                        <ul class="space-y-3 text-sm text-blue-200">
+                            <li>
+                                <a href="https://asmesrit.org" target="_blank"
+                                    class="hover:text-white transition flex items-center p-2 rounded-lg bg-blue-800/50 border border-blue-700 hover:bg-blue-800 hover:border-blue-500">
+                                    <i class="fas fa-globe mr-3 text-yellow-400"></i>
+                                    <span>ASME SRIT Official</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://efx.asmesrit.org" target="_blank"
+                                    class="hover:text-white transition flex items-center p-2 rounded-lg bg-blue-800/50 border border-blue-700 hover:bg-blue-800 hover:border-blue-500">
+                                    <i class="fas fa-rocket mr-3 text-yellow-400"></i>
+                                    <span>ASME EFx SRIT</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Competitions</h3>
+                        <ul class="space-y-2 text-sm text-blue-300">
+                            <li><a href="#" class="hover:text-white transition">ASME Extended Reality Challenge</a></li>
+                            <li><a href="#" class="hover:text-white transition">ASME Human Powered Vehicle</a></li>
+                            <li><a href="#" class="hover:text-white transition">ASME Student Design Comp</a></li>
+                            <li><a href="#" class="hover:text-white transition">IAM3D Challenge</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Social icons row -->
+                <div class="pt-8 border-t border-blue-800 flex justify-center space-x-5">
+                    <a href="https://www.instagram.com/asme_srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/asme-srit/"
+                        class="text-blue-200 hover:text-white transition text-xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <!-- Separate bottom copyright & dev line -->
+                <div class="pt-6 text-center">
+                    <p class="text-blue-200 text-sm">
+                        © <span id="currentYear"></span> ASME SRIT Student Section. All rights reserved.
+                    </p>
+                    <p class="text-blue-300 text-sm mt-2">
+                        Developed with ❤️ by
+                        <a href="https://www.linkedin.com/in/alan-s-9385a328a" target="_blank"
+                            class="underline hover:text-white">
+                            Alan S.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Set current year in footer
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            // FAQ Toggle
+            function toggleFaq(button) {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+
+                if (button.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = "0";
+                }
+            }
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for anchor links & Scroll Spy
+            document.addEventListener('DOMContentLoaded', () => {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                // Smooth Scroll
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            const headerOffset = 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            // Close mobile menu if open
+                            if (!mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                        }
+                    });
+                });
+
+                // Scroll Spy & Animation Trigger
+                window.addEventListener('scroll', () => {
+                    let current = '';
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+
+                        if (pageYOffset >= (sectionTop - 150)) {
+                            current = section.getAttribute('id');
+                        }
+
+                        // Trigger Fade In
+                        if (pageYOffset + window.innerHeight > sectionTop + 100) {
+                            section.classList.add('visible');
+                        }
+                    });
+
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-blue-800', 'font-bold');
+                        link.querySelector('span').classList.remove('w-full');
+                        if (link.getAttribute('href').includes(current)) {
+                            link.classList.add('text-blue-800', 'font-bold');
+                            link.querySelector('span').classList.add('w-full');
+                        }
+                    });
+
+                    // Navbar styling on scroll
+                    const navbar = document.getElementById('navbar');
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('shadow-md', 'bg-white/95');
+                    } else {
+                        // Keep transparency/style if needed inside hero, but here we keep it white/95 consistently for readability
+                    }
+                });
+
+                // Trigger animations for sections already in view
+                sections.forEach(section => {
+                    if (section.getBoundingClientRect().top < window.innerHeight) {
+                        section.classList.add('visible');
+                    }
+                });
+            });
+
+            // Loading screen
+            window.addEventListener("load", function () {
+                const loader = document.getElementById("loader");
+                setTimeout(() => {
+                    loader.style.opacity = "0";
+                    loader.style.transition = "opacity 0.5s ease";
+                    setTimeout(() => loader.style.display = "none", 500);
+                }, 1000); // 1 second delay
+            });
+        </script>
+</body>
+
+</html>

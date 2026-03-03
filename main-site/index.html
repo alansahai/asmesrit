@@ -1,0 +1,937 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASME SRIT Student Section — Engineering Excellence, Leadership, Innovation</title>
+  <meta name="description"
+    content="Official website of the ASME Student Section at Sri Ramakrishna Institute of Technology, Coimbatore. Join us for competitions, workshops, and engineering leadership.">
+  <meta name="theme-color" content="#060A14">
+  <link rel="icon" type="image/png" href="./assets/asmesritwhite.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/main.css">
+
+  <style>
+    /* Spinner inline styles */
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(6, 10, 20, 0.3);
+      border-top-color: #060A14;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #btnSpinner {
+      display: none;
+    }
+
+    #btnSpinner.visible {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#home" class="skip-link">Skip to main content</a>
+
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-wordmark">ASME SRIT</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="ASME SRIT Home">
+        <img src="./assets/asmesritwhite.png" alt="ASME SRIT Logo" class="navbar__logo">
+        <div class="navbar__name">ASME SRIT<span>Student Section</span></div>
+      </a>
+
+      <nav class="navbar__links" aria-label="Primary navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#membership" class="nav-link">Membership</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="#membership" class="btn btn-primary navbar__cta">Join ASME</a>
+
+      <button id="mobile-menu-button" class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <div class="mobile-menu__inner">
+        <a href="#home" class="mobile-menu__link">Home</a>
+        <a href="#about" class="mobile-menu__link">About</a>
+        <a href="#events" class="mobile-menu__link">Events</a>
+        <a href="#gallery" class="mobile-menu__link">Gallery</a>
+        <a href="#achievements" class="mobile-menu__link">Achievements</a>
+        <a href="#membership" class="mobile-menu__link">Membership</a>
+        <a href="#resources" class="mobile-menu__link">Resources</a>
+        <a href="#contact" class="mobile-menu__link">Contact</a>
+        <div class="mobile-menu__cta">
+          <a href="#membership" class="btn btn-primary" style="width:100%;justify-content:center;">Join ASME</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══ ANNOUNCEMENT BAR ═══ -->
+  <div class="announcement-bar" role="marquee" aria-label="Announcements">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="pill"><span
+            style="width:6px;height:6px;border-radius:50%;background:#34D399;display:inline-block;box-shadow:0 0 6px #34D399;"></span>
+          UPDATED</span>
+        <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+        <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive → efx.asmesrit.org</a>
+        <span>🚀 Explore ASME TN-NOVATE Innovations</span>
+        <a href="https://tnnovate.asmesrit.org" target="_blank" rel="noopener noreferrer">Visit →
+          tnnovate.asmesrit.org</a>
+        <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+        <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive → efx.asmesrit.org</a>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span class="pill"><span
+            style="width:6px;height:6px;border-radius:50%;background:#34D399;display:inline-block;box-shadow:0 0 6px #34D399;"></span>
+          UPDATED</span>
+        <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+        <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive → efx.asmesrit.org</a>
+        <span>🚀 Explore ASME TN-NOVATE Innovations</span>
+        <a href="https://tnnovate.asmesrit.org" target="_blank" rel="noopener noreferrer">Visit →
+          tnnovate.asmesrit.org</a>
+        <span>✨ ASME EFx SRIT 2026 has successfully concluded!</span>
+        <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer">Archive → efx.asmesrit.org</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="home">
+
+    <!-- ═══════════════════════════════════════
+         HERO — Full-bleed College Image
+    ════════════════════════════════════════ -->
+    <section class="hero" aria-label="Introduction">
+      <!-- College Background Image -->
+      <div class="hero__bg">
+        <img src="./assets/srit-hero.jpeg" alt="Sri Ramakrishna Institute of Technology Campus" fetchpriority="high">
+      </div>
+
+      <!-- Gradient overlays -->
+      <div class="hero__overlay"></div>
+
+      <!-- Floating mechanical elements -->
+      <div class="hero__shapes" aria-hidden="true">
+        <i class="fas fa-gear hero__shape hero__shape--gear"></i>
+        <i class="fas fa-bolt hero__shape hero__shape--bolt"></i>
+        <i class="fas fa-wrench hero__shape hero__shape--wrench"></i>
+      </div>
+
+      <!-- Glow orbs -->
+      <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+
+      <!-- Content -->
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            ASME Student Section · Sri Ramakrishna Institute of Technology
+          </div>
+
+          <h1 class="hero__heading">
+            Engineering<br>
+            <span class="gradient-text">Excellence.</span><br>
+            Leadership. Innovation.
+          </h1>
+
+          <p class="hero__subtext">
+            The ASME Student Section at SRIT develops the next generation of mechanical engineers through competitions,
+            hands-on workshops, and professional development programs.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#events" class="btn btn-primary"><i class="fas fa-rocket" aria-hidden="true"></i> Explore
+              Activities</a>
+            <a href="#membership" class="btn btn-ghost"><i class="fas fa-user-plus" aria-hidden="true"></i> Become a
+              Member</a>
+          </div>
+
+          <div class="hero__stats">
+            <div>
+              <div class="hero__stat-num">150+</div>
+              <div class="hero__stat-label">Active Members</div>
+            </div>
+            <div>
+              <div class="hero__stat-num">15+</div>
+              <div class="hero__stat-label">Awards Won</div>
+            </div>
+            <div>
+              <div class="hero__stat-num">20+</div>
+              <div class="hero__stat-label">Events Organized</div>
+            </div>
+            <div>
+              <div class="hero__stat-num">5</div>
+              <div class="hero__stat-label">Years Strong</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+          <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5" />
+          <circle cx="8" cy="7" r="2" fill="currentColor" opacity="0.7" />
+        </svg>
+        Scroll
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ABOUT SECTION
+    ════════════════════════════════════════ -->
+    <section id="about" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">About ASME SRIT</h2>
+          <p class="section-subtitle">A formal engineering chapter under ASME, driving technical excellence and
+            professional growth at SRIT since 2019.</p>
+        </div>
+
+        <!-- Vision / Mission -->
+        <div class="grid-2" style="margin-bottom:var(--s10);">
+          <div class="info-card">
+            <div class="info-card__icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+            <h3 style="font-size:19px; margin-bottom:var(--s1);">Our Vision</h3>
+            <p>To be the premier student engineering organisation at SRIT — fostering innovation, leadership, and
+              professional development through cutting-edge programs and initiatives.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
+            <h3 style="font-size:19px; margin-bottom:var(--s1);">Our Mission</h3>
+            <p>To provide SRIT students with opportunities for technical growth, networking, and hands-on experience
+              through ASME programs, competitions, and events that bridge academia with industry.</p>
+          </div>
+        </div>
+
+        <!-- Faculty Advisors -->
+        <h3 class="text-center" style="color:var(--clr-text); font-size:20px; margin-bottom:var(--s5);">
+          <span style="color:var(--clr-primary);">—</span> Esteemed Advisors <span
+            style="color:var(--clr-primary);">—</span>
+        </h3>
+        <div class="grid-2" style="max-width:800px; margin:0 auto var(--s10);">
+          <div class="faculty-card">
+            <img src="./assets/sanjana.jpg" alt="Ms. N. Sanjana" class="faculty-card__avatar" loading="lazy">
+            <div>
+              <p class="faculty-card__name">Ms. N. Sanjana</p>
+              <p class="faculty-card__dept">Faculty Advisor - ASME SRIT Section<br>Assistant Professor<br>Computer
+                Science
+                &amp; Engineering</p>
+              <a href="mailto:sanjana.cse@sritcbe.ac.in" class="faculty-card__email">sanjana.cse@sritcbe.ac.in</a>
+            </div>
+          </div>
+          <div class="faculty-card">
+            <img src="./assets/immanual.png" alt="Mr. R. Immanual" class="faculty-card__avatar" loading="lazy">
+            <div>
+              <p class="faculty-card__name">Mr. R. Immanual</p>
+              <p class="faculty-card__dept">Member at Large - ASME TN Section<br>Assistant Professor<br>Mechanical
+                Engineering</p>
+              <a href="mailto:immanual.me@sritcbe.ac.in" class="faculty-card__email">immanual.me@sritcbe.ac.in</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Office Bearers 2026-27 -->
+        <h3 class="text-center" style="color:var(--clr-text); font-size:20px; margin-bottom:var(--s5);">
+          <span style="color:var(--clr-primary);">—</span> Office Bearers 2026–2027 <span
+            style="color:var(--clr-primary);">—</span>
+        </h3>
+        <div class="grid-4">
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="./assets/members/alan.png" alt="Alan S" loading="lazy"></div>
+            <p class="member-card__name">Alan S</p>
+            <p class="member-card__role">Chairperson</p>
+            <p class="member-card__dept">3rd Year · Computer Science &amp; Engineering</p>
+          </div>
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="./assets/members/tharunbs.png" alt="Tharun B S" loading="lazy"></div>
+            <p class="member-card__name">Tharun B S</p>
+            <p class="member-card__role">Vice Chairperson</p>
+            <p class="member-card__dept">3rd Year · Electrical &amp; Electronics Engineering</p>
+          </div>
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="./assets/members/jai.png" alt="Jaikumar A" loading="lazy"></div>
+            <p class="member-card__name">Jaikumar A</p>
+            <p class="member-card__role">Secretary</p>
+            <p class="member-card__dept">3rd Year · Mechanical Engineering</p>
+          </div>
+          <div class="member-card">
+            <div class="member-img-wrap"><img src="./assets/members/shri_abinaya.png" alt="Shri Abinaya" loading="lazy">
+            </div>
+            <p class="member-card__name">Shri Abinaya</p>
+            <p class="member-card__role">Treasurer</p>
+            <p class="member-card__dept">3rd Year · Electronics &amp; Communication Engineering</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <a href="members.html" class="btn btn-outline"><i class="fas fa-users" aria-hidden="true"></i> View Full
+            Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         LEADERSHIP MESSAGES
+    ════════════════════════════════════════ -->
+    <section id="leadership-messages" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Voices That Guide Us</div>
+          <h2 class="section-title">Leadership Messages</h2>
+        </div>
+
+        <div class="leadership-grid">
+          <!-- Advisor -->
+          <div class="message-card" data-role="advisor">
+            <div class="message-card__avatar">
+              <img src="./assets/sanjana.jpg" alt="Ms. N. Sanjana" loading="lazy">
+            </div>
+            <div class="message-card__content">
+              <i class="fas fa-quote-left message-card__quote-icon" aria-hidden="true"></i>
+              <p class="message-card__text">"At ASME SRIT, we believe in nurturing not just engineers, but innovators
+                who build a sustainable future. Empowering students with hands-on technical skills is our paramount
+                focus."</p>
+              <div class="message-card__author">
+                <p class="name">Ms. N. Sanjana</p>
+                <p class="role">Faculty Advisor - ASME SRIT Section</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member at Large -->
+          <div class="message-card">
+            <div class="message-card__avatar">
+              <img src="./assets/immanual.png" alt="Mr. R. Immanual" loading="lazy">
+            </div>
+            <div class="message-card__content">
+              <i class="fas fa-quote-left message-card__quote-icon" aria-hidden="true"></i>
+              <p class="message-card__text">"The connection between academia and industry is critical. ASME provides
+                SRIT students unparalleled access to global engineering networks, standard practices, and technical
+                rigor."</p>
+              <div class="message-card__author">
+                <p class="name">Mr. R. Immanual</p>
+                <p class="role">Member at Large - ASME TN Section</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chairperson -->
+          <div class="message-card" data-role="chair">
+            <div class="message-card__avatar">
+              <img src="./assets/members/alan.png" alt="Alan S" loading="lazy">
+            </div>
+            <div class="message-card__content">
+              <i class="fas fa-quote-left message-card__quote-icon" aria-hidden="true"></i>
+              <p class="message-card__text">"Our student section is a launchpad. Through rigorous competitions, project
+                expos, and peer collaboration, we forge our members into leaders ready to tackle real-world challenges."
+              </p>
+              <div class="message-card__author">
+                <p class="name">Alan S</p>
+                <p class="role">Chairperson, ASME SRIT Section</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         EVENTS SECTION
+    ════════════════════════════════════════ -->
+    <section id="events" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">What We Do</div>
+          <h2 class="section-title">Events &amp; Initiatives</h2>
+          <p class="section-subtitle">Competitions, tech fests, and workshops that shape the engineers of tomorrow.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="event-card">
+            <div class="event-card__img-wrap">
+              <img src="./assets/tnnovate.jpg" alt="ASME TN-NOVATE" loading="lazy">
+              <span class="event-card__badge"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Oct 10, 2025</span>
+            </div>
+            <div class="event-card__body">
+              <span class="event-card__tag">Project Expo</span>
+              <h3 class="event-card__title">ASME TN-NOVATE</h3>
+              <p class="event-card__desc">SDG Based Innovation Project Expo — where sustainable innovation meets
+                engineering excellence.</p>
+              <a href="https://tnnovate.asmesrit.org" target="_blank" rel="noopener noreferrer"
+                class="event-card__link">
+                View Event <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__img-wrap">
+              <img src="./assets/tnnovate1.jpg" alt="TN-NOVATE Hackathon" loading="lazy">
+              <span class="event-card__badge"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Oct 9, 2025</span>
+            </div>
+            <div class="event-card__body">
+              <span class="event-card__tag">Hackathon</span>
+              <h3 class="event-card__title">TN-NOVATE Hackathon</h3>
+              <p class="event-card__desc">24-hour hackathon targeting sustainable engineering solutions for real-world
+                challenges.</p>
+              <a href="https://tnnovate.asmesrit.org" target="_blank" rel="noopener noreferrer"
+                class="event-card__link">
+                View Event <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__img-wrap"
+              style="background:var(--clr-bg-3); display:flex; align-items:center; justify-content:center;">
+              <img src="./assets/efx_srit.png" alt="ASME EFx SRIT" loading="lazy"
+                style="max-height:140px; object-fit:contain; padding:var(--s3);">
+              <span class="event-card__badge"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Feb 14, 2026</span>
+            </div>
+            <div class="event-card__body">
+              <span class="event-card__tag">Tech Fest</span>
+              <h3 class="event-card__title">ASME EFx SRIT</h3>
+              <p class="event-card__desc">High-energy tech fest featuring workshops, design competitions, and industry
+                networking.</p>
+              <a href="https://efx.asmesrit.org" target="_blank" rel="noopener noreferrer" class="event-card__link">
+                View Event <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-6">
+          <a href="achievements.html" class="btn btn-outline">View All Events <i class="fas fa-arrow-right"
+              aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GALLERY
+    ════════════════════════════════════════ -->
+    <section id="gallery" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Moments</div>
+          <h2 class="section-title">Our Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="./assets/achievements/tnkcs2feb.png" alt="TN Karting Championship Season 2" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>TNKC Season 2</h3>
+              <p>Kart Racing Championship</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/achievements/kartingchamp.png" alt="Mega ATV Challenge" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>Mega ATV Challenge</h3>
+              <p>Kart &amp; ATV Championship</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/achievements/2025besthome.jpeg" alt="Best Home in Town" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>Best Home in Town</h3>
+              <p>Senior Citizens Home Visit</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/achievements/2024patentfiling.png" alt="Patent Awareness Program" loading="lazy">
+            <div class="gallery-overlay">
+              <h3>Patent Awareness Program</h3>
+              <p>Design Patent Filing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ACHIEVEMENTS
+    ════════════════════════════════════════ -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Recognition</div>
+          <h2 class="section-title">Achievements</h2>
+          <p class="section-subtitle">Competitions won, milestones reached, community impact made.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="achievement-card">
+            <div class="achievement-card__img-wrap">
+              <img src="./assets/achievements/shh.jpg" alt="Shine Healthcare Hackathon" loading="lazy">
+              <span class="achievement-card__category">Recognition</span>
+            </div>
+            <div class="achievement-card__body">
+              <div class="achievement-card__meta">
+                <div class="achievement-card__icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+                <div>
+                  <h3>Shine Healthcare Hackathon — Pre-Finals</h3>
+                  <span class="date">Aug 2025</span>
+                </div>
+              </div>
+              <p style="font-size:14px; color:var(--clr-text-muted);">Team Gix Notion selected for Pre-Finals by TN Dr.
+                M.G.R. Medical University, StartupTN &amp; Aakam360.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-card__img-wrap">
+              <img src="./assets/achievements/kartingchamp.png" alt="AUTOSPORTS INDIA" loading="lazy">
+              <span class="achievement-card__category">Competition</span>
+            </div>
+            <div class="achievement-card__body">
+              <div class="achievement-card__meta">
+                <div class="achievement-card__icon"><i class="fas fa-flag-checkered" aria-hidden="true"></i></div>
+                <div>
+                  <h3>AUTOSPORTS INDIA — Overall Champions</h3>
+                  <span class="date">Apr 2025</span>
+                </div>
+              </div>
+              <p style="font-size:14px; color:var(--clr-text-muted);">Team Garudans won Overall Championship (₹30,000),
+                Runner-Up Drag Race &amp; Skid Pad, Autocross Winner.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-card__img-wrap">
+              <img src="./assets/achievements/tnkcs2feb.png" alt="TNKC Season 2" loading="lazy">
+              <span class="achievement-card__category">Competition</span>
+            </div>
+            <div class="achievement-card__body">
+              <div class="achievement-card__meta">
+                <div class="achievement-card__icon"><i class="fas fa-medal" aria-hidden="true"></i></div>
+                <div>
+                  <h3>TNKC S2 — Best Build &amp; Skid Pad Winner</h3>
+                  <span class="date">Feb 2025</span>
+                </div>
+              </div>
+              <p style="font-size:14px; color:var(--clr-text-muted);">Team Garudans won Best Build Quality and Skid Pad
+                at the Tamil Nadu Karting Championship Season 2.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-card__img-wrap">
+              <img src="./assets/achievements/oldagehome.jpeg" alt="Senior Citizens Home Visit" loading="lazy">
+              <span class="achievement-card__category">Community</span>
+            </div>
+            <div class="achievement-card__body">
+              <div class="achievement-card__meta">
+                <div class="achievement-card__icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
+                <div>
+                  <h3>Best Home in Town — Community Outreach</h3>
+                  <span class="date">Jul 2025</span>
+                </div>
+              </div>
+              <p style="font-size:14px; color:var(--clr-text-muted);">~25 members visited the Senior Citizens Home in
+                Mathipalayam, Coimbatore, spreading warmth and clarity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <a href="achievements.html" class="btn btn-primary"><i class="fas fa-trophy" aria-hidden="true"></i> All
+            Achievements</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         MEMBERSHIP
+    ════════════════════════════════════════ -->
+    <section id="membership" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Get Involved</div>
+          <h2 class="section-title">Join ASME SRIT</h2>
+          <p class="section-subtitle">Become part of a global engineering community and accelerate your career.</p>
+        </div>
+
+        <div class="membership-banner" style="max-width:900px; margin:0 auto var(--s10);">
+          <h3>Membership Benefits</h3>
+          <p>ASME membership opens doors to exclusive scholarships, industry networking, technical resources, and
+            hands-on leadership opportunities that no classroom can provide.</p>
+          <div class="btn-group">
+            <a href="https://www.asme.org/membership" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fas fa-user-plus" aria-hidden="true"></i> Join ASME (Freshman Year)
+            </a>
+            <a href="https://forms.gle/gamnMAFxRXuMjZfG7" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline">
+              <i class="fas fa-user-plus" aria-hidden="true"></i> Join ASME (Other Years)
+            </a>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="info-card text-center">
+            <div class="info-card__icon" style="margin:0 auto var(--s3);"><i class="fas fa-network-wired"
+                aria-hidden="true"></i></div>
+            <h4 style="font-size:16px; margin-bottom:var(--s1); color:var(--clr-text);">Networking</h4>
+            <p style="font-size:13.5px;">Connect with industry professionals, alumni, and peers across ASME's global
+              network.</p>
+          </div>
+          <div class="info-card text-center">
+            <div class="info-card__icon" style="margin:0 auto var(--s3);"><i class="fas fa-trophy"
+                aria-hidden="true"></i></div>
+            <h4 style="font-size:16px; margin-bottom:var(--s1); color:var(--clr-text);">Leadership</h4>
+            <p style="font-size:13.5px;">Develop leadership by organising events, managing teams, and taking officer
+              roles.</p>
+          </div>
+          <div class="info-card text-center">
+            <div class="info-card__icon" style="margin:0 auto var(--s3);"><i class="fas fa-graduation-cap"
+                aria-hidden="true"></i></div>
+            <h4 style="font-size:16px; margin-bottom:var(--s1); color:var(--clr-text);">Scholarships</h4>
+            <p style="font-size:13.5px;">Access exclusive ASME scholarships, awards, and financial support for members.
+            </p>
+          </div>
+          <div class="info-card text-center">
+            <div class="info-card__icon" style="margin:0 auto var(--s3);"><i class="fas fa-book-open"
+                aria-hidden="true"></i></div>
+            <h4 style="font-size:16px; margin-bottom:var(--s1); color:var(--clr-text);">Resources</h4>
+            <p style="font-size:13.5px;">Free ASME digital library, technical standards, publications, and cutting-edge
+              research.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         RESOURCES
+    ════════════════════════════════════════ -->
+    <section id="resources" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Downloads</div>
+          <h2 class="section-title">Student Resources</h2>
+          <p class="section-subtitle">Handbooks, playbooks, toolkits, and annual reports for student section operations.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Handbooks -->
+          <div class="glass-card" style="padding:var(--s5);">
+            <div
+              style="color:var(--clr-primary); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:var(--s2);">
+              Handbooks &amp; Guides</div>
+            <p style="font-size:13px; color:var(--clr-text-muted); margin-bottom:var(--s4);">For running an effective
+              student section.</p>
+            <div style="display:flex; flex-direction:column; gap:var(--s2);">
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-book" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Student Section Handbook</p>
+                  <p class="resource-item__desc">Guidelines for operating a student section effectively.</p>
+                  <a href="./assets/reports/UpdateASMEStudentSectionHandbookFY26.pdf" target="_blank"
+                    class="resource-item__link"><i class="fas fa-external-link-alt" aria-hidden="true"></i> View
+                    Handbook</a>
+                </div>
+              </div>
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Student Section Playbook</p>
+                  <p class="resource-item__desc">Benefits of student sections and volunteering.</p>
+                  <a href="./assets/reports/StudentSectionPlaybookFY26.pdf" target="_blank"
+                    class="resource-item__link"><i class="fas fa-download" aria-hidden="true"></i> Download Playbook</a>
+                </div>
+              </div>
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-toolbox" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Advisor Toolkit</p>
+                  <p class="resource-item__desc">Toolkit for SSAs to understand their advisory roles.</p>
+                  <a href="./assets/reports/AdvisorToolkitFY26.pdf" target="_blank" class="resource-item__link"><i
+                      class="fas fa-external-link-alt" aria-hidden="true"></i> Access Toolkit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Resources -->
+          <div class="glass-card" style="padding:var(--s5);">
+            <div
+              style="color:var(--clr-primary); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:var(--s2);">
+              Additional Resources</div>
+            <p style="font-size:13px; color:var(--clr-text-muted); margin-bottom:var(--s4);">Templates and materials for
+              student activities.</p>
+            <div style="display:flex; flex-direction:column; gap:var(--s2);">
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-id-card" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">ASME Membership Resources</p>
+                  <p class="resource-item__desc">Membership materials to share. (.zip format)</p>
+                  <a href="./assets/reports/Stud-Section-Membership-Resources.zip" target="_blank"
+                    class="resource-item__link"><i class="fas fa-download" aria-hidden="true"></i> Download
+                    Resources</a>
+                </div>
+              </div>
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Leader Transition Report Template</p>
+                  <p class="resource-item__desc">Smooth handover of responsibilities between leaders.</p>
+                  <a href="./assets/reports/FInalLeaderTransitionReportTemplate.pdf" target="_blank"
+                    class="resource-item__link"><i class="fas fa-download" aria-hidden="true"></i> Download Template</a>
+                </div>
+              </div>
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Sponsorship Template</p>
+                  <p class="resource-item__desc">Build a sponsorship package for events.</p>
+                  <a href="./assets/reports/ASME_Sponsorship_Templatev1.docx" target="_blank"
+                    class="resource-item__link"><i class="fas fa-download" aria-hidden="true"></i> Get Template</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Annual Reports -->
+          <div class="glass-card" style="padding:var(--s5);">
+            <div
+              style="color:var(--clr-primary); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:var(--s2);">
+              Annual Reports</div>
+            <p style="font-size:13px; color:var(--clr-text-muted); margin-bottom:var(--s4);">Annual reports of ASME SRIT
+              Student Section.</p>
+            <div style="display:flex; flex-direction:column; gap:var(--s2);">
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Annual Report 2022–2023</p>
+                  <a href="./assets/reports/asme report 2022-2023 1234.pdf" class="resource-item__link"><i
+                      class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+              </div>
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Annual Report 2023–2024</p>
+                  <a href="./assets/reports/ASME REPORT 2023-2024.pdf" class="resource-item__link"><i
+                      class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+              </div>
+              <div class="resource-item">
+                <div class="resource-item__icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+                <div>
+                  <p class="resource-item__title">Annual Report 2024–2025</p>
+                  <a href="./assets/reports/ASME REPORT 2024-25.pdf" class="resource-item__link"><i
+                      class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+              </div>
+            </div>
+            <div
+              style="margin-top:var(--s4); padding:var(--s3); background:var(--clr-primary-dim); border:1px solid rgba(56,189,248,0.2); border-radius:var(--r-md); text-align:center;">
+              <p style="font-size:13px; font-weight:600; color:var(--clr-text); margin-bottom:6px;">Submit Event
+                Information</p>
+              <a href="https://airtable.com/appQ0BwEPfI38mQWE/shrmyDrqJbL3Azs3h" target="_blank"
+                rel="noopener noreferrer" class="btn btn-primary" style="padding:7px 18px; font-size:13px;">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Submit via Airtable
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════════ -->
+    <section id="contact" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Reach Us</div>
+          <h2 class="section-title">Contact Us</h2>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:var(--s6);">
+          <!-- Info side -->
+          <div style="display:flex; flex-direction:column; gap:var(--s4);">
+            <div class="glass-card" style="padding:var(--s5);">
+              <h3 style="font-size:18px; margin-bottom:var(--s4); color:var(--clr-text);">Get In Touch</h3>
+              <div style="display:flex; flex-direction:column; gap:var(--s4);">
+                <div class="contact-item">
+                  <div class="contact-item__icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                  <div>
+                    <p class="contact-item__label">Address</p>
+                    <p class="contact-item__val" style="font-size:14px;">ASME SRIT Student Section<br>Sri Ramakrishna
+                      Institute of Technology<br>Peror Chettipalayam, Pachapalayam<br>Coimbatore – 641010, Tamil Nadu
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item__icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                  <div>
+                    <p class="contact-item__label">Email</p>
+                    <a href="mailto:asme@sritcbe.ac.in" class="contact-item__val"
+                      style="color:var(--clr-primary);">asme@sritcbe.ac.in</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item__icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                  <div>
+                    <p class="contact-item__label">Phone</p>
+                    <a href="tel:+919677817992" class="contact-item__val" style="color:var(--clr-primary);">+91
+                      9677817992</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card" style="padding:var(--s5);">
+              <h3 style="font-size:18px; margin-bottom:var(--s2); color:var(--clr-text);">Follow Our Journey</h3>
+              <p style="font-size:13.5px; color:var(--clr-text-muted); margin-bottom:var(--s3);">Stay updated with
+                events, achievements, and opportunities.</p>
+              <div style="display:flex; gap:var(--s2);">
+                <a href="https://www.instagram.com/asme_srit/" target="_blank" rel="noopener noreferrer"
+                  class="social-btn" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/asme-srit/" target="_blank" rel="noopener noreferrer"
+                  class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form side -->
+          <div class="glass-card" style="padding:var(--s5);">
+            <h3 style="font-size:18px; margin-bottom:var(--s4); color:var(--clr-text);">Send a Message</h3>
+            <form id="contactForm" novalidate style="display:flex; flex-direction:column; gap:var(--s3);">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" required placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" required placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" rows="5" required
+                  placeholder="Your message…"></textarea>
+              </div>
+              <div class="form-checkbox-wrap">
+                <input type="checkbox" id="affirm" name="affirm" required>
+                <label for="affirm">I confirm the details provided are true to my knowledge.</label>
+              </div>
+              <button id="submitBtn" type="submit" class="btn btn-primary"
+                style="justify-content:center; position:relative;">
+                <span id="btnText"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</span>
+                <span id="btnSpinner" class="spinner" style="position:absolute; right:16px;" aria-hidden="true"></span>
+              </button>
+              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div style="height:380px; border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--clr-border);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.462087118404!2d76.89818547480738!3d10.94174448921723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85c6bbf412ce5%3A0x52c5151f21ac8419!2sSri%20Ramakrishna%20Institute%20of%20Technology!5e1!3m2!1sen!2sin!4v1756305318621!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="SRIT Campus Location">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logos">
+            <img src="./assets/asmewhite.png" alt="ASME SRIT Logo">
+            <img src="./assets/SRITlogowhite.png" alt="SRIT Logo">
+          </div>
+          <h3 class="footer__heading">About ASME SRIT</h3>
+          <p class="footer__tagline">The ASME Student Section at Sri Ramakrishna Institute of Technology provides
+            students with opportunities for professional development, technical growth, and leadership through
+            innovative programs and events.</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Quick Links</h3>
+          <nav class="footer__links" aria-label="Footer quick links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#achievements">Achievements</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="members.html">Our Team</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">ASME Competitions</h3>
+          <nav class="footer__links" aria-label="ASME competitions">
+            <a href="https://efests.asme.org/competitions/asme-extended-reality-challenge" target="_blank"
+              rel="noopener noreferrer">Extended Reality Challenge (XRC)</a>
+            <a href="https://efests.asme.org/competitions/human-powered-vehicle-challenge-(hpvc)" target="_blank"
+              rel="noopener noreferrer">e-Human Powered Vehicle Challenge</a>
+            <a href="https://efests.asme.org/competitions/student-design-competition-(sdc)" target="_blank"
+              rel="noopener noreferrer">Student Design Competition (SDC)</a>
+            <a href="https://efests.asme.org/competitions/asme-innovative-additive-manufacturing-3d-challeng"
+              target="_blank" rel="noopener noreferrer">IAM3D® Challenge</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="currentYear"></span> ASME SRIT Student Section. All rights reserved.</p>
+        <div style="display:flex; gap:var(--s2);">
+          <a href="https://www.instagram.com/asme_srit/" target="_blank" rel="noopener noreferrer" class="social-btn"
+            aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/asme-srit/" target="_blank" rel="noopener noreferrer"
+            class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+        <p class="footer__dev">Developed with ❤️ by <a href="https://www.linkedin.com/in/alan-s-9385a328a"
+            target="_blank" rel="noopener noreferrer">Alan S.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="assets/scripts/main.js"></script>
+</body>
+
+</html>
