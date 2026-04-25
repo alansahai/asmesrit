@@ -1,0 +1,19 @@
+{
+  "name": "asmesrit-main-site",
+  "version": "1.0.0",
+  "description": "ASME SRIT Student Section - Main Website",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [
+    "asme",
+    "srit",
+    "student-section"
+  ],
+  "author": "ASME SRIT",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
